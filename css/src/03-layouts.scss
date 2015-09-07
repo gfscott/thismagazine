@@ -1,0 +1,43 @@
+/*=========================================================
+/* Mobile-First! */
+@media (max-width: 30em) {
+  
+  h1.hed {
+    font-size: 1.4em;
+  }
+  
+  h2.dek {
+    font-size: 1.2em;
+  }
+  
+  p {
+    font-size: 1em;
+  }
+  
+}
+
+/*=========================================================
+/* Medium-sized! */
+@media (min-width: 30em) and (max-width: 48em) {
+  
+  
+}
+
+/*=========================================================
+/* Big! */
+
+@media (min-width: 48em) and (max-width: 64em) {
+  
+  
+}
+
+/*=========================================================
+/* Supersized! */
+
+@media (min-width: 64em) {
+
+  h1.hed {
+    font-size: 3em;
+  }
+    
+}

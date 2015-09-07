@@ -1,0 +1,40 @@
+/*=========================================================
+/* Author */
+
+.Author {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.Author-name {
+  margin-right: 1em;
+  font-weight: bold;
+}
+
+.Author-name::before {
+  content: "By ";
+}
+
+.Author-website,
+.Author-twitter {
+  margin-right: 1em;
+  color: #777;
+  text-decoration: none;
+}
+
+.Author-website--icon,
+.Author-twitter--icon {
+  font-size: 0.8em;
+  color: #777;
+  fill: #777;
+}
+
+.Author-website:hover,
+.Author-twitter:hover {
+  color: #d22;
+}
+
+.Author-website:hover .Author-website--icon,
+.Author-twitter:hover .Author-twitter--icon {
+  color: #d22;
+  fill: #d22;
+}

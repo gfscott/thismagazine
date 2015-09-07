@@ -1,0 +1,46 @@
+/*=========================================================
+/* Related links! */
+
+.Related {
+  margin: 1em auto;
+  padding: 1em;
+  max-width: 40em;
+
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media ( min-width: 40em ) {
+  
+  .Related {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+}
+
+
+.Related-header {
+  margin-top: 0;
+  padding-bottom: 0.4em;
+  border-bottom: solid 3px #777;
+}
+
+.Related-list {
+  padding: 0;
+  list-style: none;
+}
+
+.Related-list-item {
+  padding-bottom: 1em;
+}
+
+  .Related-list-item:last-child {
+    padding-bottom: 0;
+  }
+
+.Related-link {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+}

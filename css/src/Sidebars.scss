@@ -1,0 +1,100 @@
+.Widget {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.Wrap-sidebar {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.Widget-header {
+  margin-top: 0;
+  padding-bottom: 0.4em;
+  border-bottom: solid 3px #777;
+}
+
+@media ( min-width: 40em ) {
+  
+  .Wrap-sidebar {
+    padding: 0;
+  }
+   
+}
+
+//----------------------------------------------------------
+// Widget zone following articles
+// Widget area that follows main text on article pages
+
+.Wrap-sidebar--article_after {
+  margin: 1em auto;
+  max-width: 40em;  
+}
+
+
+//----------------------------------------------------------
+// Widget for donation appeal.
+// Note that text is controlled through the Widget manager
+// Added to layout normally. JS repositions if possible
+
+.Wrap-sidebar--donate {
+  margin: 1em auto;
+  max-width: 40em;
+}
+
+// different styles are applied after the widget is reattached further up the page.
+// JS addes the .js-layout class
+// Related file: ../js/src/donation.js
+.Widget-donate.js-layout {
+  margin: 1em auto;  
+  padding: 1em;
+  background: #d22;
+  color: #eee;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+@media ( min-width: 40em ){
+  
+  .Widget-donate.js-layout {
+    margin: 0 1em 1em 0;
+    width: 15em;
+    float: left;
+  }
+  
+}
+
+@media ( min-width: 60em ) {
+  
+  .Widget-donate.js-layout {
+    font-size: 1em;
+  }
+  
+}
+
+
+
+.js-layout .Widget-donate-header {
+  font-size: 1em;
+  padding: 0;
+  border-bottom: 0;
+  line-height: 1.4em;
+}
+
+.js-layout .Widget-donate-text {
+  font-family: sans-serif;
+  font-size: 1em;
+}
+
+.js-layout .Widget-donate-link {
+  display: block;
+  background: #fff;
+  color: #d22;
+  text-align: center;
+  padding: 0.5em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+

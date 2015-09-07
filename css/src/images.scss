@@ -1,0 +1,52 @@
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.wp-caption,
+.alignnone,
+.alignleft,
+.aligncenter,
+.alignright,
+.alignnone img,
+.alignleft img,
+.aligncenter img,
+.alignright img {
+  display: block;
+}
+
+p.wp-caption-text {
+  font-size: 0.8em;
+  font-size: 0.8rem;
+  color: #777;
+  font-style: italic;
+}
+
+// Images only float on layouts wide enough to allow it. at narrower sizes they are unfloated
+@media ( min-width: 40em ){
+
+  .alignleft {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .alignright {
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .aligncenter,
+  .aligncenter img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .aligncenter p.wp-caption-text {
+    text-align: center;
+  }
+  
+
+}

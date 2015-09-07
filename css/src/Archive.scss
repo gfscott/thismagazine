@@ -1,0 +1,58 @@
+.Wrap-archive {
+  margin: 0 auto;
+  padding: 1em;
+  max-width: 60em;
+  max-width: 60rem;
+}
+
+.Wrap-archive-item {
+  margin: 2em auto;
+  padding-bottom: 2em;
+  border-bottom: solid 1px #bbb;
+}
+
+
+
+@media ( min-width: 60em ) {
+  
+  .Wrap-archive { 
+    padding: 0;
+  }
+  
+}
+
+.Wrap-archive .Article-header {
+  max-width: 60em;
+  max-width: 60rem;
+}
+
+.Wrap-archive .Article-hed {
+  font-size: 1.6em;
+}
+
+.Wrap-archive .Article-dek {
+  font-size: 1.2em;
+}
+
+.Article-hed-link {
+  text-decoration: none;
+}
+
+
+
+
+
+.excerpt-more {
+  background: #d22;
+  font-weight: bold;
+  font-size: 0.7em;
+  text-transform: uppercase;
+  padding: 0.3em 0.6em;
+  color: #fff;
+  text-decoration: none;    
+}
+
+.excerpt-more:hover {
+  background: #444;
+  color: #fff;
+}

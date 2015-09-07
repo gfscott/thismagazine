@@ -1,0 +1,41 @@
+/*=========================================================
+/* Globals */
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Colour Scheme */
+/* http://coolors.co/f0f8ff-fc8b6d-354252-4c8380-96d7c1 */
+
+body {
+  color: #444444;
+}
+
+a {
+  color: #d22;
+  transition-duration: 0.2s;
+}
+
+  a:hover {
+    color: #444;
+  }
+
+hr {
+  margin: 2em 0;
+  height: 1px;
+  border: 0;
+  border-bottom: solid 1px #ddd;
+}
+
+
+/*=========================================================
+/* Interactivity */
+.is-hidden {
+  display: none;
+}
