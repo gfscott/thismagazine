@@ -36,12 +36,12 @@
     // TWITTER
     // If the author has a Twitter handle included, insert it.
     
-    if ( get_post_custom_values('guest_author_twitter')[0] != "" ) {
+    if ( get_post_custom_values('guest_author_twitter')[0] ) {
       
       $handle = get_post_custom_values('guest_author_twitter')[0];
       
       // If the Twitter handle has been entered in the CMS as '@example' instead of 'example', then chop off the '@'
-      if ( $handle[0] = "@" ) {
+      if ( $handle[0] === "@" ) {
         $handle = substr($handle, 1);
       }                  
             

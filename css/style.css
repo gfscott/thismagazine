@@ -541,6 +541,19 @@ hr {
 .Comments-header {
   color: #eee; }
 
+.Comments-reveal {
+  display: block;
+  margin: 0 auto;
+  max-width: 40rem;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #d22;
+  color: #fff;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px; }
+
 /*=========================================================
 /* Categories! */
 .Wrap-footer {

@@ -12,12 +12,12 @@
   $url = get_permalink(); // permalink for the post
   $title = get_the_title(); // title of the post
   // Urlencoded versions, necessary for using in share URLs
-  $encoded_title = urlencode($title);
-  $encoded_url = urlencode($url);
+  $encoded_title = rawurlencode($title);
+  $encoded_url = rawurlencode($url);
   
   // Email settings
-  $email_subject = urlencode($title . ' from This.org');
-  $email_content = urlencode('An article from This Magazine you might be interested in: ');
+  $email_subject = rawurlencode($title . ', from This.org');
+  $email_content = rawurlencode('An article from This Magazine you might be interested in: ');
   $email_content .= "%0D%0A%0D%0A";
   $email_content .= $encoded_title;
   $email_content .= "%0D%0A";
