@@ -1,0 +1,194 @@
+
+.Wrap-nav {
+  
+  width: 70%;
+  
+  // .Wrap-branding has a 0.5em margin-right to equal a 1em gutter
+  // margin-left: 0.5em;
+  // to keep from touching the sides
+  margin-right: 1em;
+  
+}
+
+
+.Wrap-menu {
+  
+  width: 100%;
+  
+}
+
+
+.Nav-primary {
+  top: 3em;
+  position: absolute;
+  width: 100%;
+  background-color: #444;  
+}
+
+.Nav-list {
+  
+  margin: 0;
+  padding: 1em 1em 0.5em;
+  list-style: none;
+  
+}
+
+.Nav-list .menu-item a {
+  
+  display: block;
+  text-decoration: none;
+  padding: 0.5em;
+  background: #d22;
+  color: #fff;
+  margin-bottom: 0.5em;
+  
+}
+
+.Nav-list .menu-item a:hover {
+  
+  background: #1e90ff;
+  
+}
+
+
+
+.Nav-toggle {
+  
+  background-color: #d22;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1em;
+  padding: 0.5em 1em;
+  
+  border-radius: 4px; 
+}
+
+.Nav-toggle.js-toggled-open {
+  
+  background-color: #444;
+  color: #fff;
+  
+  border-radius: 4px 4px 0 0;
+  
+}
+
+.Nav-toggle.js-toggled-open:before {
+  
+  content: "Close "
+  
+}
+
+
+
+// Wider nav styles
+@media ( min-width: 40em) {
+  
+  .Nav-toggle {
+    display: none;
+  }
+  
+  // Must show the menu at this larger size even though it still has the .is-hidden class
+  .Nav-primary.is-hidden {
+    display: block;   
+  }
+  
+  .Nav-primary {
+    position: relative;
+    top: auto;
+    background: transparent;
+    margin-bottom: 2em;
+  }
+  
+  .Nav-list {
+    margin: 0 auto;
+    max-width: 60em;
+  }
+  
+  .Nav-list .menu-item,
+  .Nav-list .menu-item a {
+    display: inline;
+  }
+  
+  .Nav-list .menu-item a {
+    background: #eee;
+    color: #d22;
+  }
+  
+  .Nav-list .menu-item a:hover {
+    background: #d22;
+    color: #fff;
+  }
+  
+  
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// Featured Articles skybar
+
+.Featured {
+  
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.Featured-article {
+  display: none;
+}
+
+@media ( min-width: 40em ) {
+  
+  .Featured-article {
+    display: block;
+  }
+  
+}
+
+
+
+
+.Featured-article {
+  
+  width: 22%;
+  
+}
+
+
+/*
+
+.Featured-article:first-child {
+  
+  width: 30%;
+  
+}
+*/
+
+
+.Featured-article-img {
+  max-width: 100%;
+  margin: 0;
+}
+
+.Featured-article-hed {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  word-break: hyphenate;
+}

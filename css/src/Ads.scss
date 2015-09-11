@@ -1,0 +1,30 @@
+
+
+.Wrap-leaderboard {
+  
+  display: none;
+    
+}
+
+
+@media (min-width: 750px ){
+
+  .Wrap-leaderboard {
+    display: block;    
+    margin: 0;
+    padding: 0.5em;
+    background-color: #444;
+    
+  }
+  
+  .Leaderboard {
+    
+    width: 728px;
+    height: 90px;
+    margin: 0 auto;
+    
+  }
+
+}
+
+
