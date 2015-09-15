@@ -29,7 +29,7 @@
       
       $website = get_post_custom_values('guest_author_url')[0];     
       
-      echo '<a class="Author-website" href="'.$website.'" target="_blank"><svg viewBox="0 0 100 100" class="icon icon-link Author-website--icon"><use xlink:href="#icon-link"></use></svg> Website</a>';
+      echo '<a class="Author-website" href="'.$website.'" target="_blank">Website</a>';
     }
     
     //--------------------------------------------------------------------------------
@@ -45,7 +45,7 @@
         $handle = substr($handle, 1);
       }                  
             
-      echo '<a class="Author-twitter" href="https://twitter.com/' . $handle . '" target="_blank"><svg viewBox="0 0 100 100" class="icon icon-twitter  Author-twitter--icon"><use xlink:href="#icon-twitter"></use></svg> @' . $handle . '</a>';
+      echo '<a class="Author-twitter" href="https://twitter.com/' . $handle . '" target="_blank">@' . $handle . '</a>';
     }
     
     

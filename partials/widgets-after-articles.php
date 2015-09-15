@@ -10,6 +10,9 @@
 </div>
 
 <div class="Wrap-sidebar Wrap-sidebar--donate">
+  <script>
+    var donateWidget = true;
+  </script>
   <?php dynamic_sidebar( 'donate' ) ?>
 </div>
 
