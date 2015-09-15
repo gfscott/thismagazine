@@ -1,0 +1,107 @@
+.Pagination {
+  
+  margin: 1em auto 2em;
+  max-width: 40em;
+  
+}
+
+
+.Pagination-list {
+
+  margin: 0;
+  padding: 0 1em; // padding is added so buttons don't touch window at smaller sizes
+  list-style: none;
+  
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+@media ( min-width: 40em ) {
+  
+  .Pagination-list {
+    
+    // remove padding around the list so that it fills out the column
+    padding: 0;
+    
+  }
+  
+}
+
+
+.Pagination-list-item {
+  width: 50%; 
+}
+
+
+.Pagination-link {
+  
+  display: block;
+//   text-align: center;
+  background: #d22;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  
+}
+
+.Pagination-link:hover {
+  color: #fff;
+  background-color: #444;
+}
+
+.Pagination-link--newer {
+  text-align: left;
+  padding-left: 1em;
+  margin-right: 0.5em;
+}
+
+.Pagination-link--older {
+  text-align: right;
+  padding-right: 1em;
+  margin-left: 0.5em;
+}
+
+
+.Pagination-icon {
+  display: inline-block;
+  vertical-align: bottom;
+  background-repeat: no-repeat;
+  width: 1.2em;
+  height: 1.2em;
+  transition-property: transform;
+  transition-duration: 0.2s;
+}
+
+.Pagination-icon--older {
+  margin-left: 1em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#fff" d="M15.5 8L8 .5V5H0v6h8v4.5z"/></svg>');
+}
+
+.Pagination-icon--newer {
+  margin-right: 1em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#fff" d="M.5 8L8 15.5V11h8V5H8V.5z"/></svg>');
+}
+
+
+.Pagination-link--newer:hover .Pagination-icon--newer {
+  
+  transform: translateX(-0.3em);
+  
+}
+
+.Pagination-link--older:hover .Pagination-icon--older {
+  
+  transform: translateX(0.3em);
+  
+}
+
+
+
+
+
+
+
+
