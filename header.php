@@ -16,6 +16,31 @@
     
     <?php get_template_part('partials/ad-leaderboard'); ?>
     
+    <div class="Wrap-skybar">        
+        <?php 
+          $secondary_menu = array(
+          	'theme_location'  => 'Secondary Menu',
+          	'menu'            => '',
+          	'container'       => 'nav',
+          	'container_class' => 'Skybar',
+          	'container_id'    => '',
+          	'menu_class'      => 'Skybar-list',
+          	'menu_id'         => '',
+          	'echo'            => true,
+          	'fallback_cb'     => '',
+          	'before'          => '',
+          	'after'           => '',
+          	'link_before'     => '',
+          	'link_after'      => '',
+          	'depth'           => -1,
+          	'walker'          => ''
+          ); 
+        ?>
+        
+        <?php wp_nav_menu( $secondary_menu ); ?>
+    </div>
+    
+    
     <div class="Wrap-header">
     
       <div class="Wrap-branding">
@@ -27,50 +52,7 @@
         </a>
       </div>
       
-      
-      
-      <div class="Wrap-featured">
-        <nav class="Featured">
-          
-          
-          <?php            
-          // WP_Query arguments
-          $args = array (
-          	'post_type'         => array( 'post' ),
-          	'post_status'       => array( 'published' ),
-          	'posts_per_page'    => '4',
-          	'featured'          => 'yes'
-          );
-          
-          // The Query
-          $featured = new WP_Query( $args );
-          ?>          
-          <?php if ( $featured->have_posts() ) : ?>
-          	<?php while ( $featured->have_posts() ) : $featured->the_post(); ?>
-          	  
-          		<div class="Featured-article">
-            		<a class="Featured-article-link" href="<?php the_permalink(); ?>">
-              		<img src="http://unsplash.it/300/250/" alt="">
-<!--
-              		<?php if ( has_post_thumbnail() ) : ?>
-                  	<?php the_post_thumbnail(); ?>
-                  <?php endif; ?>
--->
-              		<h2 class="Featured-article-hed"><?php the_title(); ?></h2>
-            		</a>
-          		</div>
-          	
-          	<?php endwhile; ?>
-              <?php wp_reset_postdata(); ?>
-            <?php else : ?>
-          	  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
-          <?php endif; ?>
-          
-          
-          
-        </nav>
-        
-      </div>
+      <?php get_template_part('partials/header-featured'); ?>
     
     </div>
     

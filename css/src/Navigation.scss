@@ -142,12 +142,26 @@
 
 // Featured Articles skybar
 
+.Wrap-featured {
+  width: 100%;
+}
+
 .Featured {
   
   display: flex;
   justify-content: space-between;
+  
+  padding-right: 1em;
+  
 }
 
+@media (min-width: 60em) {
+  
+  .Featured {
+    padding-right: 0;
+  }
+  
+}
 
 .Featured-article {
   display: none;
@@ -163,22 +177,15 @@
 
 
 
-
 .Featured-article {
   
   width: 22%;
   
 }
 
-
-/*
-
-.Featured-article:first-child {
-  
-  width: 30%;
-  
+.Featured-article-link {
+  text-decoration: none;
 }
-*/
 
 
 .Featured-article-img {
@@ -192,3 +199,13 @@
   font-size: 1em;
   word-break: hyphenate;
 }
+
+// Wordpress adds this class if there's no thumbnail
+.Featured-article-hed--nothumb {
+  
+  font-size: 1.6em;
+  
+}
+
+
+
