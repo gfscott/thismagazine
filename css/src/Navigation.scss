@@ -17,8 +17,8 @@
   
 }
 
-
-.Nav-primary {
+// .Nav-primary
+.Wrap-nav-primary {
   top: 3em;
   position: absolute;
   width: 100%;
@@ -28,7 +28,7 @@
 .Nav-list {
   
   margin: 0;
-  padding: 1em 1em 0.5em;
+  padding: 1em 1em 0;
   list-style: none;
   
 }
@@ -49,6 +49,44 @@
   background: #1e90ff;
   
 }
+
+
+
+
+//--------------
+// Searchbar at smaller sizes is displayed in the dropdown
+.Wrap-searchbar {
+  margin: 0;
+  padding: 0.5em 1em 1em;
+}
+
+.Searchbar {
+  width: 100%;
+  display: flex;
+}
+
+.Searchbar-query {
+  width: 70%;
+  border: 0;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2215%22%20height%3D%2216%22%20viewBox%3D%220%200%2015%2016%22%3E%3Cpath%20fill%3D%22%23777%22%20d%3D%22M15%2013l-3.893-3.893C11.663%208.2%2012%207.143%2012%206c0-3.313-2.688-6-6-6S0%202.687%200%206s2.687%206%206%206c1.143%200%202.2-.337%203.107-.89L13%2015c.273.273.727.27%201%200l1-1c.273-.273.273-.727%200-1zm-9-3c-2.21%200-4-1.79-4-4s1.79-4%204-4%204%201.79%204%204-1.79%204-4%204z%22%2F%3E%3C%2Fsvg%3E');  
+  background-repeat: no-repeat;
+  background-position-x: 0.5em;
+  background-position-y: center;
+  padding-left: 2em;
+}
+
+
+.Searchbar-submit {
+  width: 30%;
+  background-color: #1E90FF;
+  color: #fff;
+  border: 0;
+}
+
+
+
+
 
 
 
@@ -85,6 +123,13 @@
 
 
 
+
+
+
+
+
+
+
 // Wider nav styles
 @media ( min-width: 40em) {
   
@@ -92,12 +137,52 @@
     display: none;
   }
   
-  // Must show the menu at this larger size even though it still has the .is-hidden class
-  .Nav-primary.is-hidden {
-    display: block;   
+  // Must show the menu at this larger size even though it still has the .is-hidden class  
+  .Wrap-nav-primary,
+  .Wrap-nav-primary.is-hidden {
+    margin: 0 auto;
+    max-width: 60em;
+    max-width: 60rem;
+    display: flex;
   }
   
   .Nav-primary {
+    width: 70%;
+    background: #d22;
+  }
+  
+  .Wrap-searchbar {
+    width: 30%;
+    margin: 0;
+    padding: 0;
+    background: #d22;
+  }
+    
+    .Searchbar {
+      padding: 0.5em;
+    }
+    
+    .Searchbar-query {
+      padding: 0.5em 0.5em 0.5em 2em;
+    }
+    
+    .Searchbar-submit {
+      background-color: #d22;
+      transition-property: background-color;
+      transition-duration: 0.2s;
+    }
+    
+    .Searchbar-query:focus + .Searchbar-submit {
+      background-color: #1E90FF;
+    }
+    
+    .Searchbar-submit:focus {
+      background-color: #1E90FF;
+    }
+  
+  
+  
+  .Wrap-nav-primary {
     position: relative;
     top: auto;
     background: transparent;
@@ -108,24 +193,23 @@
     margin: 0 auto;
     max-width: 60em;
   }
+
   
   .Nav-list .menu-item,
   .Nav-list .menu-item a {
     display: inline;
+    margin-bottom: 0;
   }
   
   .Nav-list .menu-item a {
-    background: #eee;
-    color: #d22;
-  }
-  
-  .Nav-list .menu-item a:hover {
     background: #d22;
     color: #fff;
   }
   
-  
-  
+  .Nav-list .menu-item a:hover {
+    background: #1E90FF;
+    color: #fff;
+  }
   
 }
 

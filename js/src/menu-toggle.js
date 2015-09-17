@@ -3,7 +3,7 @@
 (function(){
   
   var toggle  = document.getElementById("Nav-toggle");
-  var menu    = document.querySelector(".Nav-primary");
+  var menu    = document.querySelector(".Wrap-nav-primary");
   
   if(toggle){
     
