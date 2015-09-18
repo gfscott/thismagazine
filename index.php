@@ -20,6 +20,8 @@
         
   </div>
   
+  <?php get_template_part('partials/ad-big-box'); ?>
+  
   <?php get_template_part('partials/related') ?>
 
   <?php get_template_part('partials/widgets-after-articles') ?>

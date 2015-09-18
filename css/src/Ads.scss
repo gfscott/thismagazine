@@ -1,11 +1,11 @@
-
+//----------------------------------------------------------
+// Leaderboard
 
 .Wrap-leaderboard {
   
   display: none;
     
 }
-
 
 @media (min-width: 750px ){
 
@@ -28,3 +28,29 @@
 }
 
 
+//----------------------------------------------------------
+// Big Box
+
+.Wrap-bigbox {
+  display: none;
+}
+
+.Wrap-bigbox.js-rendered {
+  
+  display: block;
+  margin: 2em auto;
+  width: 300px;
+  
+}
+
+@media ( min-width: 40em ) {
+  
+  .Wrap-bigbox.js-rendered {
+    
+    display: block;
+    margin: 0 0 2em 2em;
+    float: right;
+    
+  }
+  
+}
