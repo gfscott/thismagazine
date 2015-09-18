@@ -7,7 +7,7 @@
   if ( articlePs.length > 5 ) {
     
     // adID is the ID attr of the DoubleClick div
-    var adID        = "div-gpt-ad-1442538440237-1";
+    // var adID        = "div-gpt-ad-1442538440237-1";
     
     // a wrapper for the bigbox
     var holder      = document.querySelector(".Wrap-bigbox");
@@ -17,10 +17,7 @@
     
     // select a point in the first third-ish of the article
     // in most cases this should not conflict with the donation appeal, which is around the two-thirds mark
-    var thirdish    = Math.floor( articlePs.length * 0.333 );
-    
-    console.log(thirdish);
-    
+    var thirdish    = Math.floor( articlePs.length * 0.333 );    
     // we'll insert the ad after the third(ish) paragraph.
     var insertion   = articlePs[thirdish];
     
@@ -29,11 +26,13 @@
     // https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore
     insertion.parentNode.insertBefore(holder, insertion);
     
-    // by default the big box is display:none until the .js-rendered class is added
+    // tell the world that it's done
     holder.classList.add("js-rendered");
-    
+
+    // deprecating the dynamic rendering, it's just too unpredictable
+    // by default the big box is display:none until the .js-rendered class is added
     // add the ID after placement so Google can render the ad.
-    Bigbox.setAttribute("id", adID);
+    // Bigbox.setAttribute("id", adID);
     
   } else return;
   

@@ -7,7 +7,7 @@
   if ( articlePs.length > 5 ) {
     
     // adID is the ID attr of the DoubleClick div
-    var adID        = "div-gpt-ad-1442538440237-1";
+    // var adID        = "div-gpt-ad-1442538440237-1";
     
     // a wrapper for the bigbox
     var holder      = document.querySelector(".Wrap-bigbox");
@@ -17,10 +17,7 @@
     
     // select a point in the first third-ish of the article
     // in most cases this should not conflict with the donation appeal, which is around the two-thirds mark
-    var thirdish    = Math.floor( articlePs.length * 0.333 );
-    
-    console.log(thirdish);
-    
+    var thirdish    = Math.floor( articlePs.length * 0.333 );    
     // we'll insert the ad after the third(ish) paragraph.
     var insertion   = articlePs[thirdish];
     
@@ -29,11 +26,13 @@
     // https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore
     insertion.parentNode.insertBefore(holder, insertion);
     
-    // by default the big box is display:none until the .js-rendered class is added
+    // tell the world that it's done
     holder.classList.add("js-rendered");
-    
+
+    // deprecating the dynamic rendering, it's just too unpredictable
+    // by default the big box is display:none until the .js-rendered class is added
     // add the ID after placement so Google can render the ad.
-    Bigbox.setAttribute("id", adID);
+    // Bigbox.setAttribute("id", adID);
     
   } else return;
   
@@ -197,3 +196,57 @@ if (jsSocialShares) {
     });
   });
 }
+
+(function youtubeEmbed(){
+  
+"use strict";  
+  
+// get all the youtube embeds!
+// NOTE there's a function in the site-specific plugin adding a .Youtube-embed class to all oembed iframes.
+
+var allEmbeds = document.querySelectorAll(".Youtube-embed");
+
+// if there are embeds, do stuff. otherwise forget it
+if ( allEmbeds.length > 0 ) {
+  
+  // loop through all the videos
+  for ( var i = 0; i < allEmbeds.length; i++ ) {
+    
+    // operate on this video
+    var video   = allEmbeds[i];
+    // get the parent. By default in Wordpress this is a paragraph element!
+    var vParent  = video.parentNode;
+    
+    // create a wrapper div
+    var wrap    = document.createElement("div");
+    
+    // insert it before the parent P tag
+    vParent.parentNode.insertBefore(wrap, vParent);
+    // ... then we can delete the parent node. it's done with
+    vParent.remove();
+    
+    
+    // move the video inside the wrapper
+    wrap.appendChild(video);
+    
+    // This uses the intrinsic ratio method
+    // http://alistapart.com/article/creating-intrinsic-ratios-for-video        
+        
+    video.removeAttribute("width");
+    video.removeAttribute("height");
+    
+    video.style.width = "100%";
+    video.style.height = "100%";
+    video.style.top = "0";
+    video.style.left = "0";
+    video.style.position = "absolute";
+    
+    wrap.style.position = "relative";
+    wrap.style.paddingTop = "56.25%";
+    
+  }
+    
+  
+} else return;
+
+})();

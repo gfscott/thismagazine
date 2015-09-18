@@ -31,13 +31,10 @@
 //----------------------------------------------------------
 // Big Box
 
-.Wrap-bigbox {
-  display: none;
-}
 
-.Wrap-bigbox.js-rendered {
+
+.Wrap-bigbox {
   
-  display: block;
   margin: 2em auto;
   width: 300px;
   
@@ -45,9 +42,9 @@
 
 @media ( min-width: 40em ) {
   
+  // js adds a class indicating it's placed the ad. If it doesn't do that, the ad won't float and break the layout.
   .Wrap-bigbox.js-rendered {
     
-    display: block;
     margin: 0 0 2em 2em;
     float: right;
     
