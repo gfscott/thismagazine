@@ -19,7 +19,7 @@
 
 // .Nav-primary
 .Wrap-nav-primary {
-  top: 3em;
+  top: 5em;
   position: absolute;
   width: 100%;
   background-color: #444;  
@@ -44,11 +44,71 @@
   
 }
 
-.Nav-list .menu-item a:hover {
+.Nav-list .menu-item a:hover,
+.Nav-list .menu-item a:focus {
   
   background: #1e90ff;
   
 }
+
+
+//--------------
+// Nested menu items
+
+
+.Nav-list .menu-item .sub-menu {
+  
+  padding: 0;
+  
+}
+
+.sub-menu menu-item {
+  display: block;
+}
+
+@media ( min-width: 40em ) {
+  
+  .Nav-list .menu-item {
+    position: relative;
+    width: auto;
+  }
+  
+  .Nav-list .menu-item .sub-menu {
+    
+    position: absolute;
+    left: -0.5em;
+    top: 1.5em;
+    padding: 0 0.5em;
+    background-color: #d22;
+    white-space: nowrap;
+        
+  }
+  
+  .Nav-list .menu-item .sub-menu a {
+    display: block;
+    margin: 0.5em 0;
+  }
+  
+  
+  // -----------------
+  // Hide sub menus, show on hover:
+  
+  .Nav-list .menu-item .sub-menu {
+    display: none;
+  }
+  
+  .Nav-list .menu-item:hover .sub-menu,
+  .Nav-list .menu-item a:focus + .sub-menu {
+    display: block;
+  }
+  
+  
+    
+  
+  
+}
+
+
 
 
 
@@ -100,7 +160,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  margin: 1em;
+  margin-top: 3em;
+  margin-right: 1em;
   padding: 0.5em 1em;
   
   border-radius: 4px; 
