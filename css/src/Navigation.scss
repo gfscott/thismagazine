@@ -214,6 +214,18 @@
 }
 
 
+@media (min-width: 60em) {
+  
+  .Wrap-nav-primary,
+  .Wrap-nav-primary.is-hidden {
+    
+    padding-right: 1em;
+    padding-left: 1em;
+    
+  }
+  
+}
+
 
 
 
@@ -239,13 +251,9 @@
   
 }
 
-@media (min-width: 60em) {
-  
-  .Featured {
-    padding-right: 0;
-  }
-  
-}
+
+
+
 
 .Featured-article {
   display: none;

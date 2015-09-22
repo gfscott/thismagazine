@@ -1,10 +1,13 @@
-var gulp    = require('gulp'),
-    gutil   = require('gulp-util'),
-    uglify  = require('gulp-uglify'),
-    sass    = require('gulp-sass'),
-    minify  = require('gulp-minify-css'),
-    rename  = require('gulp-rename'),
-    concat  = require('gulp-concat');
+var gulp          = require('gulp'),
+    gutil         = require('gulp-util'),
+    uglify        = require('gulp-uglify'),
+    sass          = require('gulp-sass'),
+    minify        = require('gulp-minify-css'),
+    postcss       = require('gulp-postcss'),
+    autoprefixer  = require('autoprefixer'),
+    mqpacker      = require('css-mqpacker'),
+    rename        = require('gulp-rename'),
+    concat        = require('gulp-concat');
 
 gulp.task('default', ['compile-scripts', 'compile-styles']);
 
@@ -35,12 +38,20 @@ gulp.task('compile-styles', function(){
    gulp.src(paths.styles)
     .pipe(concat('style.css'))
     .pipe(sass())
+    .pipe(postcss([
+      autoprefixer({ browsers: ['> 2% in CA'] }),
+      mqpacker()
+    ]))
     .pipe(gulp.dest('css'));
   
   // Return a concatenated, minified CSS file
   gulp.src(paths.styles)
     .pipe(concat('style.min.css'))
     .pipe(sass())
+    .pipe(postcss([
+      autoprefixer({ browsers: ['> 2% in CA'] }),
+      mqpacker()
+    ]))
     .pipe(minify())
     .pipe(gulp.dest('css'));
   
