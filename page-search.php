@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-<div class="Wrap-page">
+<div class="Wrap-page Wrap-search">
   
   <div class="Search">
-  
+    
     <h1 class="Search-hed">Search: <span class="Search-query"><?php echo $_GET["q"]; ?></span></h1>
       
       <div class="Search-results">
