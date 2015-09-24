@@ -920,7 +920,6 @@ p.wp-caption-text {
           flex-grow: 1;
   margin: 0 0.5em;
   padding: 0.5em 1em;
-  width: 50%;
   background: #333;
   color: #fff;
   text-decoration: none;
@@ -939,11 +938,38 @@ p.wp-caption-text {
   background-color: #d22;
   color: #fff; }
 
+.Share-button {
+  padding: 0.5em 0.5em 0.5em 2.2em; }
+
 .Share-button--facebook {
   background-color: #3b5998; }
 
 .Share-button--twitter {
   background-color: #55acee; }
+
+/* Add the sprite to every button, position individually */
+.Share-button:before {
+  content: "";
+  width: 1.2em;
+  height: 1.2em;
+  overflow: hidden;
+  position: absolute;
+  margin-left: -1.5em;
+  background-repeat: no-repeat;
+  background-size: 1em;
+  background-position-y: 0.1em; }
+
+.Share-button--facebook:before {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M13.334%200H2.667C1.194%200%200%201.194%200%202.667v10.666C0%2014.806%201.196%2016%202.668%2016H8V9H6V7h2V5.5C8%204.12%209.12%203%2010.5%203H13v2h-2.5c-.275%200-.5.224-.5.5V7h2.75l-.5%202H10v7h3.335C14.808%2016%2016%2014.806%2016%2013.333V2.667C16%201.194%2014.808%200%2013.336%200z%22%2F%3E%3C%2Fsvg%3E"); }
+
+.Share-button--twitter:before {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M16%203.038c-.59.26-1.22.438-1.885.517.678-.406%201.198-1.05%201.443-1.816-.634.37-1.337.642-2.085.79-.6-.638-1.452-1.037-2.396-1.037-1.813%200-3.283%201.47-3.283%203.28%200%20.258.03.51.085.75C5.15%205.39%202.73%204.083%201.11%202.1.83%202.583.67%203.147.67%203.75c0%201.138.578%202.143%201.46%202.73-.54-.016-1.045-.164-1.488-.41v.04c0%201.59%201.132%202.918%202.633%203.22-.275.075-.565.115-.865.115-.212%200-.417-.02-.618-.06.418%201.305%201.63%202.254%203.066%202.28-1.123.88-2.54%201.406-4.077%201.406-.26%200-.52-.01-.78-.04%201.457.93%203.18%201.476%205.03%201.476%206.04%200%209.34-5%209.34-9.34%200-.14%200-.283-.01-.424.648-.463%201.2-1.04%201.64-1.7z%22%2F%3E%3C%2Fsvg%3E"); }
+
+.Share-button--email:before {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M14.5%202h-13C.675%202%200%202.675%200%203.5v10c0%20.825.675%201.5%201.5%201.5h13c.825%200%201.5-.675%201.5-1.5v-10c0-.825-.675-1.5-1.5-1.5zM6.23%208.6L2%2011.895V4.057L6.23%208.6zM2.756%204h10.488L8%207.938%202.756%204zm3.64%204.777L8%2010.5l1.605-1.723L12.895%2013h-9.79l3.29-4.223zM9.77%208.6L14%204.057v7.838L9.77%208.6z%22%2F%3E%3C%2Fsvg%3E"); }
+
+.Share-button--print:before {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M4%201h8v2H4V1zM15%204H1c-.55%200-1%20.45-1%201v5c0%20.55.45%201%201%201h3v4h8v-4h3c.55%200%201-.45%201-1V5c0-.55-.45-1-1-1zM2%207c-.552%200-1-.448-1-1s.448-1%201-1%201%20.448%201%201-.448%201-1%201zm9%207H5V9h6v5z%22%2F%3E%3C%2Fsvg%3E"); }
 
 .Widget {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -1211,26 +1237,6 @@ p.wp-caption-text {
     padding-right: 0; }
   .Share-button {
     font-size: 1em; }
-  .Share-button {
-    padding: 0.5em 0.5em 0.5em 2.7em; }/* Add the sprite to every button, position individually */
-  .Share-button:before {
-    content: " ";
-    width: 1.2em;
-    height: 1.2em;
-    overflow: hidden;
-    position: absolute;
-    margin-left: -1.6em;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 1024"><path fill="#FFF" d="M245 53.2c-9.3 4-18.5 6.4-27.7 7.4 10.4-6.2 17.4-15 21-26.4-9.4 5.6-19.6 9.5-30.3 11.6-9.5-10-21.2-15-35-15-13.3 0-24.6 4.6-34 14-9.3 9.3-14 20.6-14 33.8 0 3.6.5 7.2 1.3 11-19.6-1-38-6-55.2-14.8C54 66 40 54.2 28 39.4c-4.7 7.4-7 15.6-7 24.2 0 8.2 2 15.8 6 23 4 7 9 12.6 15.5 17-7.7-.3-15-2.3-21.7-6v.5c0 12 3.6 22 11 31 7.2 9 16.5 14 27.5 17-4.3 1-8.5 2-12.7 2-2.8 0-5.8 0-9-1 3 10 8.6 18 16.8 24 8.4 6 17.7 10 28 10-17.7 13-37.6 20-59.8 20H11c22 14 46.2 21 73 21 17 0 33-2 48-8s27.7-12 38.3-22c10.6-9 19.7-19 27.4-31 7.7-12 13.4-24 17-37 4-12 6-25 6-38 0-3 0-5-.3-6 9.6-6 17.6-15 24-24zm-22 222.4H33c-6.6 0-12 5.3-12 11.8v190.2c0 6.5 5.4 11.8 12 11.8h102.3v-82.8h-28v-32.3h28v-23.8c0-27.6 17-42.7 41.5-42.7 11.8 0 22 1 25 1.3v29h-17.2c-13.4 0-16 7-16 16v21h32l-4.2 33h-27.8v82H223c6.6 0 12-5 12-11V288c0-6.6-5.4-12-12-12z"/><g fill="#FFF"><path d="M40 606l25 17.3c13.7 9.6 24.3 17 31.7 22 .8.7 2.5 2 5.2 3.8 2 2 4 4 6 5l6 4c2 2 5 3 7 3 2 1 4 1 6 1s4 0 6-1c2 0 4-2 7-3l6-4c1-1 4-2 6-4l5-3 57-39c6-4 11-9 15-15 4-5 5-11 5-18 0-5-2-10-5.8-14-4-3-8.5-5-13.7-5H38c-6 0-11 2-14.4 7-3 4-5 9.5-5 15.8 0 5 2.7 11 7 17 4.6 6 9 10.5 14 14z"/><path d="M224.4 619c-26.5 18-46.7 32-60.4 42-4.6 3.3-8.4 6-11.2 7.8-3 2-6.7 3.8-11.5 5.8s-9.2 3-13.3 3h-.2c-4 0-8.6-1-13.3-3-4.8-2-8.6-4-11.5-5.8-3-2-6.6-4.6-11.2-8-11-8-31-22-60.3-41.8-4.6-3-8.7-6.6-12.3-10.6v96.3c0 5.3 2 10 5.7 13.7 3 3.8 8 5.7 13 5.7h179c5 0 10-1 13-5s5-8 5-13v-97c-4 4-8 8-12 11z"/></g><g fill="#FFF"><path d="M74.2 953v40.3h107.6V926H74.2v27zm13.4-13.6h80.7V953H87.6v-13.6zm0 27h80.7v13.4H87.6v-13.5zm94.2-134.6v-40.4H74.2v67.4h107.6"/><path d="M208.7 831.8h-13.5v40.4H60.7v-40.5H47.3c-13.5 0-27 13.6-27 27V926c0 13.5 13.6 27 27 27h13.5v-40.5h134.5V953h13.5c13.5 0 27-13.6 27-27v-67.3c-.2-13.5-13.6-27-27-27z"/></g></svg>');
-    background-repeat: no-repeat;
-    background-size: 1.2em; }
-  .Share-button--facebook:before {
-    background-position-y: -1.2em; }
-  .Share-button--twitter:before {
-    background-position-y: 0; }
-  .Share-button--email:before {
-    background-position-y: -2.4em; }
-  .Share-button--print:before {
-    background-position-y: -3.6em; }
   .Wrap-sidebar {
     padding: 0; }
   .Wrap-sidebar--article_before {
