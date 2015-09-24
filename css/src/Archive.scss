@@ -31,3 +31,38 @@
   background: #444;
   color: #fff;
 }
+
+
+
+
+
+//----------------------------------------------------------
+// Issue taxonomy pages
+
+
+.Wrap-issue-header {
+  overflow-y: hidden;
+  border-bottom: solid 1px #bbb;
+}
+
+
+.Wrap-cover-image {
+  margin: 0;
+}
+
+.Cover-link:after {
+  content: "View full size";
+}
+
+
+@media ( min-width: 40em ) {
+  
+  .Wrap-cover-image {
+    max-width: 300px;
+    float: left;
+    margin-bottom: 1em;
+    margin-right: 1em;
+    
+  }
+  
+}

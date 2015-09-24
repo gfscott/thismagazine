@@ -497,6 +497,16 @@ hr {
   background: #444;
   color: #fff; }
 
+.Wrap-issue-header {
+  overflow-y: hidden;
+  border-bottom: solid 1px #bbb; }
+
+.Wrap-cover-image {
+  margin: 0; }
+
+.Cover-link:after {
+  content: "View full size"; }
+
 /*=========================================================
 /* Article! */
 .Wrap-article {
@@ -1113,6 +1123,11 @@ p.wp-caption-text {
   .Pagination-list {
     padding: 0;
     height: 2em; }
+  .Wrap-cover-image {
+    max-width: 300px;
+    float: left;
+    margin-bottom: 1em;
+    margin-right: 1em; }
   .Article-hed {
     font-size: 2em; }
   .Article-dek {

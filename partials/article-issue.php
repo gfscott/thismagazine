@@ -7,10 +7,14 @@
 **/
 ?>
 <?php
-  
+ 
   $issues = get_the_terms( get_the_ID(), 'issue');
-  foreach ( $issues as $issue ) {
-    echo '<a class="Issue-link" href="' . get_term_link( $issue ) . '">' . $issue->name . '</a>';
+  
+  if ( $issues && ! is_tax( 'issue' ) ) {
+  
+    foreach ( $issues as $issue ) {
+      echo '<a class="Issue-link" href="' . get_term_link( $issue ) . '">' . $issue->name . '</a>';
+    }
   }
   
 ?>
