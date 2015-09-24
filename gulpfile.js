@@ -6,6 +6,7 @@ var gulp          = require('gulp'),
     postcss       = require('gulp-postcss'),
     autoprefixer  = require('autoprefixer'),
     mqpacker      = require('css-mqpacker'),
+    sourcemaps    = require('gulp-sourcemaps'),
     rename        = require('gulp-rename'),
     concat        = require('gulp-concat');
 
@@ -21,7 +22,9 @@ gulp.task('compile-scripts', function(){
   
   // Return a concatenated but not uncompressed JS file
   gulp.src(paths.scripts)
+    .pipe(sourcemaps.init())
     .pipe(concat('script.js'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('js'));
   
   // Return a concatenated, uglified script
@@ -36,12 +39,14 @@ gulp.task('compile-styles', function(){
   
   // Return a concatenated, but uncompressed CSS file
    gulp.src(paths.styles)
+    .pipe(sourcemaps.init())
     .pipe(concat('style.css'))
     .pipe(sass())
     .pipe(postcss([
       autoprefixer({ browsers: ['> 2% in CA'] }),
       mqpacker()
     ]))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('css'));
   
   // Return a concatenated, minified CSS file
