@@ -405,7 +405,7 @@ hr {
 
 .Pagination {
   margin: 1em auto 2em;
-  max-width: 40em; }
+  max-width: 60em; }
 
 .Pagination-list {
   margin: 0;
@@ -416,6 +416,10 @@ hr {
   -webkit-justify-content: space-between;
           justify-content: space-between; }
 
+.Pagination-list-item {
+  -webkit-flex-grow: 1;
+          flex-grow: 1; }
+
 .Pagination-link {
   display: block;
   background: #d22;
@@ -423,8 +427,7 @@ hr {
   text-decoration: none;
   font-weight: bold;
   padding: 0.5em 1em;
-  border-radius: 4px;
-  width: 100%; }
+  border-radius: 4px; }
 
 .Pagination-link:hover {
   color: #fff;
@@ -477,18 +480,8 @@ hr {
   padding-bottom: 2em;
   border-bottom: solid 1px #bbb; }
 
-.Wrap-archive .Article-header {
-  max-width: 60em;
-  max-width: 60rem; }
-
-.Wrap-archive .Article-hed {
-  font-size: 1.6em; }
-
-.Wrap-archive .Article-dek {
-  font-size: 1.2em; }
-
-.Article-hed-link {
-  text-decoration: none; }
+.Wrap-archive-item .Article-header {
+  max-width: 60em; }
 
 .excerpt-more {
   background: #d22;
@@ -497,7 +490,8 @@ hr {
   text-transform: uppercase;
   padding: 0.3em 0.6em;
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+  border-radius: 3px; }
 
 .excerpt-more:hover {
   background: #444;
@@ -1248,8 +1242,6 @@ p.wp-caption-text {
     float: left; } }
 
 @media (min-width: 60em) {
-  .Wrap-archive {
-    padding: 0; }
   .Branding {
     height: 5em; }
   .Branding-tagline {

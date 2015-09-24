@@ -5,7 +5,7 @@
 **/
 ?>
 <header class="Article-header">
-  <time class="Article-pubdate" datetime="<?php echo get_the_date('c')?>" pubdate><?php echo get_the_date(); ?></time>   
+  <time class="Article-pubdate" datetime="<?php echo get_the_date('c')?>" pubdate><?php echo get_the_date("F j, Y"); ?></time>   
   <?php get_template_part('partials/article-issue'); ?>
   
   <?php if ( is_single() ) : ?>

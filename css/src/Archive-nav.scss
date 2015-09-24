@@ -1,10 +1,9 @@
 .Pagination {
   
   margin: 1em auto 2em;
-  max-width: 40em;
+  max-width: 60em;
   
 }
-
 
 .Pagination-list {
 
@@ -14,7 +13,6 @@
   
   display: flex;
   justify-content: space-between;
-
   
 }
 
@@ -32,6 +30,9 @@
 
 
 .Pagination-list-item {
+  
+  flex-grow: 1;
+  
 }
 
 
@@ -43,9 +44,7 @@
   text-decoration: none;
   font-weight: bold;
   padding: 0.5em 1em;
-  border-radius: 4px;
-  width: 100%;
-  
+  border-radius: 4px;  
 }
 
 .Pagination-link:hover {

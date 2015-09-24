@@ -8,11 +8,9 @@
 <div class="Wrap-sidebar Wrap-sidebar--article_after">
   <?php dynamic_sidebar( 'article_after' ); ?>
 </div>
+<?php endif; ?>
 
 <div class="Wrap-sidebar Wrap-sidebar--donate">
   <script>var donateWidget = true;</script>
   <?php dynamic_sidebar( 'donate' ) ?>
 </div>
-
-
-<?php endif; ?>
