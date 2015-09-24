@@ -639,7 +639,9 @@ hr {
   max-width: 60rem; }
 
 .Comments-header {
-  color: #444; }
+  color: #444;
+  padding-bottom: 0.4em;
+  border-bottom: solid 3px #777; }
 
 .Comments-reveal {
   display: block;
