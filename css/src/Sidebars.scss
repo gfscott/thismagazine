@@ -23,6 +23,27 @@
 }
 
 //----------------------------------------------------------
+// Widget zone preceding articles
+// Widget area that goes just after site nav on every page.
+// Intended as a rarely-used global all-purpose message centre
+
+.Wrap-sidebar--article_before {
+  margin: 1em auto;
+  padding: 0 1em;
+}
+
+
+@media ( min-width: 40em ) {
+  
+  .Wrap-sidebar--article_before {
+    padding: 0 1em;
+    max-width: 60em;
+  }
+  
+}
+
+
+//----------------------------------------------------------
 // Widget zone following articles
 // Widget area that follows main text on article pages
 

@@ -956,6 +956,10 @@ p.wp-caption-text {
   padding-bottom: 0.4em;
   border-bottom: solid 3px #777; }
 
+.Wrap-sidebar--article_before {
+  margin: 1em auto;
+  padding: 0 1em; }
+
 .Wrap-sidebar--article_after {
   margin: 1em auto;
   max-width: 40em; }
@@ -1227,6 +1231,9 @@ p.wp-caption-text {
     background-position-y: -3.6em; }
   .Wrap-sidebar {
     padding: 0; }
+  .Wrap-sidebar--article_before {
+    padding: 0 1em;
+    max-width: 60em; }
   .Widget-donate.js-layout {
     margin: 0 1em 1em 0;
     width: 15em;
