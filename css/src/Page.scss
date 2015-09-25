@@ -1,7 +1,38 @@
 .Wrap-page {
   
   margin: 0 auto;
+  padding: 0 1em;
   max-width: 60em;
   max-width: 60rem;
+  
+}
+
+
+.Page-hed {
+  
+}
+
+
+.Page-text {
+  
+  font-family: Georgia, Times New Roman, serif;
+  
+}
+
+.Page-hed {
+  padding-bottom: 1rem;
+  border-bottom: solid 3px #777;
+}
+
+@media ( min-width: 40em ) {
+  
+  .Page-hed {
+    font-size: 3em;
+  }
+  
+  .Page-text p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+  }
   
 }

@@ -475,6 +475,10 @@ hr {
   max-width: 60em;
   max-width: 60rem; }
 
+.Archive-label {
+  padding-bottom: 1rem;
+  border-bottom: solid 3px #777; }
+
 .Wrap-archive-item {
   margin: 2em auto;
   padding-bottom: 2em;
@@ -503,9 +507,6 @@ hr {
 
 .Wrap-cover-image {
   margin: 0; }
-
-.Cover-link:after {
-  content: "View full size"; }
 
 /*=========================================================
 /* Article! */
@@ -867,8 +868,16 @@ p.wp-caption-text {
 
 .Wrap-page {
   margin: 0 auto;
+  padding: 0 1em;
   max-width: 60em;
   max-width: 60rem; }
+
+.Page-text {
+  font-family: Georgia, Times New Roman, serif; }
+
+.Page-hed {
+  padding-bottom: 1rem;
+  border-bottom: solid 3px #777; }
 
 /*=========================================================
 /* Related links! */
@@ -1091,6 +1100,151 @@ p.wp-caption-text {
   color: #fff;
   float: right; }
 
+.Option-wrap {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap; }
+
+.Option {
+  display: block;
+  white-space: normal;
+  width: 100%;
+  margin: 0.5em 0;
+  text-align: center;
+  background: #ddd;
+  padding: 1em;
+  text-decoration: none;
+  color: #444;
+  font-size: 1.5em;
+  border-radius: 0.33em; }
+
+.Option:hover {
+  background: green;
+  color: #fff; }
+
+.Option-bestdeal:after {
+  content: "Best deal!";
+  position: absolute;
+  background: gold;
+  color: #444;
+  font-size: 0.75em;
+  margin-top: -2rem;
+  padding: 0.33em;
+  box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.33);
+  -webkit-transform: rotate(10deg);
+          transform: rotate(10deg); }
+
+.Option-hed {
+  width: 100%; }
+
+.Option-wrap.is-completed {
+  opacity: 0.4; }
+
+.Option-wrap.is-completed .Option {
+  background: #ddd;
+  color: #999; }
+
+.Option-wrap.is-completed .Option.is-selected {
+  background: green;
+  color: #fff; }
+
+.Option-wrap input {
+  display: block; }
+
+.Checkout {
+  margin: 1em 0;
+  font-size: 1.5em;
+  background: green;
+  color: #fff;
+  padding: 0.5em;
+  border: none; }
+
+.Address {
+  width: 100%;
+  padding: 1em;
+  background-color: #ddd;
+  border-radius: 0.33em; }
+
+.Address-label {
+  display: block;
+  margin-top: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #444;
+  -webkit-font-smoothing: antialiased; }
+
+.Address-label:first-child {
+  margin-top: 0; }
+
+.Address-input {
+  width: 100%;
+  font-size: 1.5em;
+  border: solid 2px #777;
+  padding: 0.2em;
+  font-family: monospace;
+  border-radius: 3px; }
+
+.Address-input:focus {
+  border-color: #d22;
+  outline: none; }
+
+.Address-need {
+  visibility: hidden;
+  float: right;
+  font-weight: bold;
+  font-size: 0.8em; }
+
+.Address-need--req {
+  color: #d22; }
+
+.Address-need--opt {
+  color: steelblue; }
+
+.Address-input:focus + .Address-need {
+  visibility: visible; }
+
+.Address-submit {
+  display: block;
+  width: 100%;
+  margin-top: 2em;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0.5em;
+  background-color: #d22;
+  color: #fff;
+  border-radius: 3px;
+  border: none; }
+
+.Address-submit:focus {
+  background-color: #1E90FF; }
+
+.Sub-price {
+  margin-top: 1em;
+  font-size: 1.5em;
+  color: #1E90FF; }
+
+.Sub-price-total--final {
+  font-weight: bold;
+  background: gold;
+  color: #444;
+  padding: 0.2em; }
+
+/*=========================================================
+/* Subscribe Page OTHER OPTIONS */
+.Sub-methods {
+  width: 100%;
+  outline: solid 1px #ddd; }
+
+.Sub-methods td {
+  padding: 0.5em; }
+
+.Sub-method--row {
+  vertical-align: top;
+  border-bottom: solid 1px #ddd; }
+
+.Sub-method--name {
+  font-weight: bold; }
+
 @media (max-width: 30em) {
   h1.hed {
     font-size: 1.4em; }
@@ -1123,6 +1277,8 @@ p.wp-caption-text {
   .Pagination-list {
     padding: 0;
     height: 2em; }
+  .Archive-label {
+    font-size: 3em; }
   .Wrap-cover-image {
     max-width: 300px;
     float: left;
@@ -1241,6 +1397,11 @@ p.wp-caption-text {
     color: #fff; }
   .Featured-article {
     display: block; }
+  .Page-hed {
+    font-size: 3em; }
+  .Page-text p {
+    font-size: 1.2em;
+    line-height: 1.6em; }
   .Related {
     padding-left: 0;
     padding-right: 0; }
@@ -1254,7 +1415,10 @@ p.wp-caption-text {
   .Widget-donate.js-layout {
     margin: 0 1em 1em 0;
     width: 15em;
-    float: left; } }
+    float: left; }
+  .Option {
+    display: inline-block;
+    width: 50%; } }
 
 @media (min-width: 60em) {
   .Branding {
