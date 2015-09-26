@@ -8,14 +8,56 @@ var gulp          = require('gulp'),
     mqpacker      = require('css-mqpacker'),
     sourcemaps    = require('gulp-sourcemaps'),
     rename        = require('gulp-rename'),
+    rev           = require('gulp-rev'),
+    findreplace   = require('gulp-replace'),      
+    del           = require('del'),
     concat        = require('gulp-concat');
 
-gulp.task('default', ['compile-scripts', 'compile-styles']);
+gulp.task('default', ['clean', 'compile-scripts', 'compile-styles', 'cachebust']);
 
 var paths = {
   scripts: 'js/src/*.js',
   styles: 'css/src/*.scss'
 };
+
+
+gulp.task('clean', function(){
+  
+  del([
+    'css/*.css',
+    'css/*.map',
+    'js/*.js',
+    'js/*.map'
+  ]);
+  
+});
+
+gulp.task('cachebust', function(){
+  
+  // busting the CSS cached filename  
+  var cssManifest = require('./css/rev-manifest.json'); // gulp-rev writes a manifest file holding the file and its rev'ed filename
+  var cssOld      = /\/css\/(?:.+)\.css/; // regex search pattern for the css file path we want to replace in the header
+  var cssNew      = "/css/" + cssManifest["style.min.css"]; // from the manifest file, read the value of the rev'ed filename, from its key, which is the un-rev'ed filename
+  
+  // open the header file, do a find-replace, and rewrite in place
+  gulp.src('header.php')
+    .pipe(findreplace( cssOld, cssNew ))
+    .pipe(gulp.dest('./'));
+
+
+  
+  // busting the JS cached filename (same method as for css)
+  var jsManifest  = require('./js/rev-manifest.json');
+  var jsOld       = /\/js\/(?:.+)\.js/;
+  var jsNew       = "/js/" + jsManifest["script.min.js"];
+  
+  // open the header file, do a find-replace, and rewrite in place
+  gulp.src('footer.php')
+    .pipe(findreplace( jsOld, jsNew ))
+    .pipe(gulp.dest('./'));
+  
+  
+});
 
 
 gulp.task('compile-scripts', function(){
@@ -27,11 +69,16 @@ gulp.task('compile-scripts', function(){
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('js'));
   
-  // Return a concatenated, uglified script
+  // Return a concatenated, uglified script, with a unique rev'ed filename
   gulp.src(paths.scripts)
+    .pipe(sourcemaps.init())
     .pipe(concat('script.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('js'));
+    .pipe(rev())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('js'))
+    .pipe(rev.manifest());
+
 });
 
 
@@ -49,8 +96,9 @@ gulp.task('compile-styles', function(){
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('css'));
   
-  // Return a concatenated, minified CSS file
+  // Return a concatenated, minified CSS file, with a unique rev'ed filename
   gulp.src(paths.styles)
+    .pipe(sourcemaps.init())
     .pipe(concat('style.min.css'))
     .pipe(sass())
     .pipe(postcss([
@@ -58,7 +106,12 @@ gulp.task('compile-styles', function(){
       mqpacker()
     ]))
     .pipe(minify())
-    .pipe(gulp.dest('css'));
+    .pipe(rev())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('css'))
+    .pipe(rev.manifest({
+      base: 'css'
+    }));
   
 });
 
