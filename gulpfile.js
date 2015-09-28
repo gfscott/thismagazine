@@ -13,21 +13,25 @@ var gulp          = require('gulp'),
     del           = require('del'),
     concat        = require('gulp-concat');
 
-gulp.task('default', ['clean', 'compile-scripts', 'compile-styles', 'cachebust']);
+gulp.task('default', ['compile-scripts', 'compile-styles']);
 
 var paths = {
-  scripts: 'js/src/*.js',
-  styles: 'css/src/*.scss'
+  scripts: './js/src/*.js',
+  styles: './css/src/*.scss'
 };
 
+
+gulp.task('version', ['clean', 'cachebust']);
 
 gulp.task('clean', function(){
   
   del([
-    'css/*.css',
-    'css/*.map',
-    'js/*.js',
-    'js/*.map'
+    './css/*.css',
+    './css/*.map',
+    './css/rev-manifest.json',
+    './js/*.js',
+    './js/*.map',
+    './js/rev-manifest.json'
   ]);
   
 });
@@ -40,11 +44,9 @@ gulp.task('cachebust', function(){
   var cssNew      = "/css/" + cssManifest["style.min.css"]; // from the manifest file, read the value of the rev'ed filename, from its key, which is the un-rev'ed filename
   
   // open the header file, do a find-replace, and rewrite in place
-  gulp.src('header.php')
+  gulp.src('./header.php')
     .pipe(findreplace( cssOld, cssNew ))
     .pipe(gulp.dest('./'));
-
-
   
   // busting the JS cached filename (same method as for css)
   var jsManifest  = require('./js/rev-manifest.json');
@@ -52,7 +54,7 @@ gulp.task('cachebust', function(){
   var jsNew       = "/js/" + jsManifest["script.min.js"];
   
   // open the header file, do a find-replace, and rewrite in place
-  gulp.src('footer.php')
+  gulp.src('./footer.php')
     .pipe(findreplace( jsOld, jsNew ))
     .pipe(gulp.dest('./'));
   
@@ -74,10 +76,8 @@ gulp.task('compile-scripts', function(){
     .pipe(sourcemaps.init())
     .pipe(concat('script.min.js'))
     .pipe(uglify())
-    .pipe(rev())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('js'))
-    .pipe(rev.manifest());
+    .pipe(gulp.dest('js'));
 
 });
 
@@ -106,18 +106,14 @@ gulp.task('compile-styles', function(){
       mqpacker()
     ]))
     .pipe(minify())
-    .pipe(rev())
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('css'))
-    .pipe(rev.manifest({
-      base: 'css'
-    }));
+    .pipe(gulp.dest('css'));
   
 });
 
 
 
 gulp.task('watch', function() {
-  gulp.watch(paths.scripts, ['compile-scripts']);
-  gulp.watch(paths.styles, ['compile-styles']);
+  gulp.watch(paths.scripts, ['default']);
+  gulp.watch(paths.styles, ['default']);
 });
