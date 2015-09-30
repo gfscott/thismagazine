@@ -11,10 +11,8 @@
     
     <?php get_template_part('partials/ad-header-scripts'); ?>
     
-    <?php // wp_head(); ?>
   </head>
   <body>
-    <?php // include_once 'img/icons.svg'; ?>
     
     <?php get_template_part('partials/ad-leaderboard'); ?>
     
