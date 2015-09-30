@@ -12,11 +12,21 @@
   margin: 0;
   padding: 0 1em;
   list-style: none;
+  font-size: 0.8em;
   
   display: flex;
   justify-content: flex-end;
   
 }
+
+@media ( min-width: 40em ) {
+  
+  .Skybar-list {
+    font-size: 1em;
+  }
+  
+}
+
 
 .Skybar-list li {
   display: inline-block;

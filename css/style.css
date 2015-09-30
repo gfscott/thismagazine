@@ -1098,6 +1098,7 @@ p.wp-caption-text {
   margin: 0;
   padding: 0 1em;
   list-style: none;
+  font-size: 0.8em;
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: flex-end;
@@ -1463,6 +1464,8 @@ p.wp-caption-text {
     margin: 0 1em 1em 0;
     width: 15em;
     float: left; }
+  .Skybar-list {
+    font-size: 1em; }
   .Option {
     display: inline-block;
     width: 50%; } }
