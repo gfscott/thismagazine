@@ -2,11 +2,7 @@
       
       <footer class="Footer">
         
-        <?php dynamic_sidebar( 'footer_one' ); ?>
-        
-        <?php dynamic_sidebar( 'footer_two' ); ?>
-        
-        <?php dynamic_sidebar( 'footer_three' ); ?>
+        <?php dynamic_sidebar( 'footer_widgets' ); ?>
               
       </footer>
       

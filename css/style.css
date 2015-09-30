@@ -683,7 +683,7 @@ figure {
   font-size: 0.85em; }
 
 .Footer-segment {
-  margin: 1em 0; }
+  margin: 1em 0 3em; }
 
 .Footer-header {
   font-size: 1em;
@@ -691,6 +691,18 @@ figure {
   padding-bottom: 0.5em;
   margin-bottom: 1em;
   border-bottom: solid 3px #bbb; }
+
+.Footer-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.Footer-menu a {
+  color: #ddd;
+  text-decoration: none; }
+
+.Footer-menu a:hover {
+  color: #d22; }
 
 .Footer-subscribe,
 .Footer-donate {
