@@ -1167,7 +1167,9 @@ p.wp-caption-text {
           transform: rotate(10deg); }
 
 .Option-hed {
-  width: 100%; }
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word; }
 
 .Option-wrap.is-completed {
   opacity: 0.4; }
@@ -1180,9 +1182,6 @@ p.wp-caption-text {
   background: green;
   color: #fff; }
 
-.Option-wrap input {
-  display: block; }
-
 .Checkout {
   margin: 1em 0;
   font-size: 1.5em;
@@ -1193,6 +1192,8 @@ p.wp-caption-text {
 
 .Address {
   width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
   padding: 1em;
   background-color: #ddd;
   border-radius: 0.33em; }
@@ -1208,7 +1209,8 @@ p.wp-caption-text {
 .Address-label:first-child {
   margin-top: 0; }
 
-.Address-input {
+.Address-input[type="text"],
+.Address-input[type="email"] {
   width: 100%;
   font-size: 1.5em;
   border: solid 2px #777;
@@ -1216,9 +1218,24 @@ p.wp-caption-text {
   font-family: monospace;
   border-radius: 3px; }
 
-.Address-input:focus {
+.Address-select {
+  width: 100%;
+  font-size: 1.5em; }
+
+.Address-input[type="text"]:focus,
+.Address-input[type="email"]:focus {
   border-color: #d22;
   outline: none; }
+
+.Wrap-address-optout {
+  display: block; }
+
+.Address-optout-label {
+  font-size: 0.8em; }
+
+.Address-optout-label,
+.Address-optout {
+  display: inline; }
 
 .Address-need {
   visibility: hidden;
@@ -1230,7 +1247,7 @@ p.wp-caption-text {
   color: #d22; }
 
 .Address-need--opt {
-  color: steelblue; }
+  color: #777; }
 
 .Address-input:focus + .Address-need {
   visibility: visible; }
@@ -1242,18 +1259,29 @@ p.wp-caption-text {
   font-size: 1.5em;
   font-weight: bold;
   padding: 0.5em;
-  background-color: #d22;
+  background-color: green;
   color: #fff;
   border-radius: 3px;
   border: none; }
 
+.Address-submit:hover,
 .Address-submit:focus {
-  background-color: #1E90FF; }
+  background-color: #d22; }
+
+.Address-submit:active + .Address-submit--paypalnotice,
+.Address-submit--paypalnotice {
+  visibility: hidden;
+  font-size: 0.8em;
+  font-weight: bold; }
+
+.Address-submit:hover + .Address-submit--paypalnotice,
+.Address-submit:focus + .Address-submit--paypalnotice {
+  visibility: visible; }
 
 .Sub-price {
   margin-top: 1em;
   font-size: 1.5em;
-  color: #1E90FF; }
+  color: green; }
 
 .Sub-price-total--final {
   font-weight: bold;

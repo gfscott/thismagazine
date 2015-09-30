@@ -56,6 +56,9 @@
 
 .Option-hed {
   width: 100%;
+  // this has to be done to fix the nowrap thing going on above
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .Option-wrap.is-completed {
@@ -71,10 +74,6 @@
 .Option-wrap.is-completed .Option.is-selected {
   background: green;
   color: #fff;
-}
-
-.Option-wrap input {
-  display: block;
 }
 
 .Checkout {
@@ -95,6 +94,8 @@
 .Address {
   
   width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
   padding: 1em;
   background-color: #ddd;
   border-radius: 0.33em;
@@ -116,7 +117,8 @@
 
 
 
-.Address-input {
+.Address-input[type="text"],
+.Address-input[type="email"] {
   width: 100%;
   font-size: 1.5em;
   border: solid 2px #777;
@@ -125,10 +127,31 @@
   border-radius: 3px;
 }
 
-.Address-input:focus {
+.Address-select {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.Address-input[type="text"]:focus,
+.Address-input[type="email"]:focus {
   border-color: #d22;
   outline: none;
 }
+
+
+.Wrap-address-optout {
+  display: block;
+}
+
+.Address-optout-label {
+  font-size: 0.8em;
+}
+
+.Address-optout-label,
+.Address-optout {
+  display: inline;
+}
+
 
 // label > span noting required or not!
 
@@ -144,7 +167,7 @@
   }
   
   .Address-need--opt {
-    color: steelblue;
+    color: #777;
   }
 
 .Address-input:focus + .Address-need {
@@ -161,16 +184,30 @@
   font-size: 1.5em;
   font-weight: bold;
   padding: 0.5em;
-  background-color: #d22;
+  background-color: green;
   color: #fff;
   border-radius: 3px;
   border: none;
   
 }
 
+.Address-submit:hover,
 .Address-submit:focus {
-  background-color: #1E90FF;
+  background-color: #d22;
 }
+
+.Address-submit:active + .Address-submit--paypalnotice,
+.Address-submit--paypalnotice {
+  visibility: hidden;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.Address-submit:hover + .Address-submit--paypalnotice,
+.Address-submit:focus + .Address-submit--paypalnotice {
+  visibility: visible;
+}
+
 
 // sub price changes depending on the province
 .Sub-price {
@@ -178,7 +215,7 @@
   //display: block;
   margin-top: 1em;
   font-size: 1.5em;
-  color: #1E90FF;
+  color: green;
   
 }
 

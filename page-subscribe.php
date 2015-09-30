@@ -36,7 +36,7 @@
     		<a class="Option" href="#intl" data-key="location" data-val="intl">Nope, it’s outside Canada.</a>
   	</div>
   	
-  	<div id="Address-form-ca" class="Wrap-address Option-wrap Option-4 " data-step="4">
+  	<div id="Address-form-ca" class="Wrap-address Option-wrap Option-4 is-hidden" data-step="4">
   		
   		<h2 class="Option-hed">Super! What’s the mailing address?</h2>
   		
@@ -58,8 +58,9 @@
     		<input class="Address-input Address-city" type="text" name="city">
     		<span class="Address-need Address-need--req">(Required)</span>
     		
+    		
     		<label class="Address-label Address-province-label" for="province">Province:</label>
-    		<select class="Address-input Address-province" name="province">
+    		<select class="Address-select Address-province" name="province">
       		<option> - Select Province/State - </option>
         	<option value="AB">Alberta</option>
         	<option value="BC">British Columbia</option>
@@ -81,10 +82,21 @@
     		<input class="Address-input Address-postcode" type="text" name="postcode">
     		<span class="Address-need Address-need--req">(Required)</span>
     		
+        <div class="Sub-price is-hidden">Total: <span id="sub-price-amount" class="Sub-price--total">$26.66</span></div>
     		
-    		<div class="Sub-price is-hidden">Total: <span id="sub-price-amount" class="Sub-price--total">$26.66</span></div>
+    		<label class="Address-label Address-email-label" for="email">Your Email Address: </label>
+    		<input class="Address-input Address-email" type="email" name="email">
+    		<span class="Address-need Address-need--req">(Required)</span>
+    		
+    		<div class="Wrap-address-optout">
+      		<label class="Address-label Address-optout-label" for="optout">Check to opt out of all email from <em>This</em> (except related to this subscription):
+        		<input class="Address-input Address-optout" type="checkbox" name="optout">
+      		</label>
+    		</div>
     		
     		<input id="Address-submit" class="Address-submit" type="submit" value="Pay Now!" class="Checkout">
+    		<span class="Address-submit--paypalnotice">Payments are handled securely through PayPal. When you hit “Pay Now” you’ll be redirected to PayPal.com to complete the transaction. Once it’s confirmed we’ll meet back here!</span>
+
     		
   		</form>
   		
@@ -158,6 +170,9 @@ Toronto, ON M5V 3A8
         
         if ( buyer.location == "ca" ) {
           
+          opt.classList.add("is-selected");
+          opt.parentNode.classList.add("is-completed");
+          
           var addressForm = document.getElementById("Address-form-ca");
           addressForm.classList.remove("is-hidden");
           
@@ -192,26 +207,40 @@ Toronto, ON M5V 3A8
       var theProvince = prov.value;
       var thePrice    = document.getElementById("sub-price-amount");
       
-      // DRY constructor to make the prices
-      var priceConstructor = function(tax, total){
-        return '$26.66 <span class="Sub-price-tax">+ $' + tax + ' tax</span> = <span class="Sub-price-total--final">$' + total + '</span>';
+      // DRY constructor to make the prices.
+      // $vars: base price (INT), tax (INT), total (INT), type of tax (STR)
+      var priceConstructor = function(base, tax, total, taxType){
+        return '$' + base + ' <span class="Sub-price-tax">+ $' + tax + ' ' + taxType + '</span> = <span class="Sub-price-total--final">$' + total + '</span>';
       }
       
-      // various cases for provincial tax rates. This is brutal
-      if( ["AB", "NT", "NU", "YT"].indexOf(theProvince) > -1 ) {
-        thePrice.innerHTML = priceConstructor(1.33, 27.99);
-      } else if ( ["MN", "NB", "NL", "ON"].indexOf(theProvince) > -1 ) {
-        thePrice.innerHTML = priceConstructor(3.46, 30.12);
-      } else if ( theProvince == "SK" ) {
-        thePrice.innerHTML = priceConstructor(2.67, 29.34);
-      } else if ( theProvince == "BC" ) {
-        thePrice.innerHTML = priceConstructor(3.19, 29.86);
-      } else if ( theProvince == "PE" ){
-        thePrice.innerHTML = priceConstructor(3.73, 30.39);
-      } else if ( theProvince == "QC" ){
-        thePrice.innerHTML = priceConstructor(3.99, 30.65);
-      } else if ( theProvince == "NS" ){
-        thePrice.innerHTML = priceConstructor(4.00, 30.66);
+      // if this is a 2 year subscription, alter prices accordingly
+      if ( buyer.location == "ca" && buyer.duration == 2 ) { 
+      
+        // various cases for provincial tax rates. This is kind of brutal, admittedly. Hard-coding instead of calculating for now
+        // This method uses indexOf, which is unsupported in < IE9. Hence the polyfill.io script above
+        if( ["AB", "BC", "MN", "NT", "NU", "QC", "SK", "YT"].indexOf(theProvince) > -1 ) {
+          thePrice.innerHTML = priceConstructor(40.94, 2.05, 42.99, "GST");
+        } else if ( ["NB", "NL", "ON"].indexOf(theProvince) > -1 ) {
+          thePrice.innerHTML = priceConstructor(40.94, 5.32, 46.26, "HST");
+        } else if ( theProvince == "PE" ){
+          thePrice.innerHTML = priceConstructor(40.94, 5.73, 46.67, "HST");
+        } else if ( theProvince == "NS" ){
+          thePrice.innerHTML = priceConstructor(40.94, 6.14, 47.08, "HST");
+        }
+      
+      // otherwise this is a one-year sub
+      } else if ( buyer.location == "ca" ) {
+        
+        if( ["AB", "BC", "MN", "NT", "NU", "QC", "SK", "YT"].indexOf(theProvince) > -1 ) {
+          thePrice.innerHTML = priceConstructor(26.66, 1.33, 27.99, "GST");
+        } else if ( ["NB", "NL", "ON"].indexOf(theProvince) > -1 ) {
+          thePrice.innerHTML = priceConstructor(26.66, 3.47, 30.13, "HST");
+        } else if ( theProvince == "PE" ){
+          thePrice.innerHTML = priceConstructor(26.66, 3.73, 30.39, "HST");
+        } else if ( theProvince == "NS" ){
+          thePrice.innerHTML = priceConstructor(26.66,4.00, 30.66, "HST");
+        }
+        
       }
     
       document.querySelector(".Sub-price").classList.remove("is-hidden");
