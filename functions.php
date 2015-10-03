@@ -27,4 +27,25 @@ $args = array(
 	);
 	register_sidebar( $args );
 
+
+
+//==========================================================
+// THUMBNAILS
+// Control thumbnail sizes
+//https://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 160, 90, true );
+add_image_size('dynamic300', 300, 9999);
+add_image_size('fixed300', 300, 170, true);
+add_image_size('dynamic960', 960, 9999);
+add_image_size('fixed960', 960, 540, true);
+
+
+
+
+
+
 ?>
+
+
+
