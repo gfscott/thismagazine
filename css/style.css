@@ -550,6 +550,14 @@ figure {
   font-size: 1em;
   line-height: 1.6em; }
 
+.Wrap-text p.Author-bio {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: solid 1px #bbb;
+  font-size: 0.8em;
+  font-style: italic;
+  color: #777; }
+
 /*=========================================================
 /* Author */
 .Author {
@@ -1426,12 +1434,6 @@ p.wp-caption-text {
   .Home-feature {
     width: 31%; }
   .Home-feature--1 {
-    width: 100%; }
-  .Home-feature--2 {
-    width: 50%; }
-  .Home-feature--3 {
-    width: 50%; }
-  .Home-feature--4 {
     width: 100%; }
   .Home-categories {
     display: -webkit-flex;

@@ -15,6 +15,15 @@
     
     <div class="Wrap-text">
       <?php the_content(); ?>
+      
+      <?php
+        // display author bio if it exists.
+        $authorBio = get_post_meta( get_the_ID(), 'guest_author_bio', true );
+        if ( ! empty( $authorBio ) ) {
+          echo '<p class="Author-bio">' . $authorBio . '</p>';
+        }
+      ?>
+      
     </div>
           
     <?php get_template_part('partials/share-tools'); ?>

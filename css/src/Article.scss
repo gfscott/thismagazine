@@ -67,6 +67,18 @@
   line-height: 1.6em;
 }
 
+// have to add the .Wrap-text to override specificity inheritance
+.Wrap-text p.Author-bio {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: solid 1px #bbb;
+  font-size: 0.8em;
+  font-style: italic;
+  color: #777;
+}
+
+
+
 @media (min-width: 40em){
   
   .Wrap-text p {
