@@ -26,6 +26,7 @@
             
     <div class="Wrap-excerpt">
       <?php echo get_the_excerpt(); ?>
+      <a class="excerpt-more" href="<?php echo get_the_permalink( $post->ID ); ?>">More »</a>
     </div>
     
   </div>

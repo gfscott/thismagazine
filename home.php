@@ -51,6 +51,7 @@
                 }
         		?>
       		</a>
+ 		      <a class="excerpt-more" href="<?php echo get_the_permalink( $post->ID ); ?>">More »</a>
     		</div>
     	
     	<?php endwhile; ?>
@@ -102,7 +103,8 @@
         
       ?>
     
-      </a>       
+      </a>
+      <a class="excerpt-more" href="<?php echo get_the_permalink( $post->ID ); ?>">More »</a>
   </div>
     
   <?php endwhile; else : ?>
