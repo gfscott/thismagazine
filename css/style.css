@@ -1435,6 +1435,8 @@ p.wp-caption-text {
     width: 31%; }
   .Home-feature--1 {
     width: 100%; }
+  .Home-feature--1 .Home-feature-hed {
+    font-size: 2.8rem; }
   .Home-categories {
     display: -webkit-flex;
     display: flex;
