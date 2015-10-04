@@ -15,18 +15,29 @@
 //==========================================================
 // WIDGETS
 
-$args = array(
+$footer_args = array(
 		'id'            => 'footer_widgets',
 		'class'         => 'Footer-widgets',
 		'name'          => 'Footer',
 		'description'   => 'The Footer widget zone',
-		'before_title'  => '<h2 class="Footer-header Footer-header--one">',
+		'before_title'  => '<h2 class="Footer-header">',
 		'after_title'   => '</h2>',
-		'before_widget' => '<aside id="%1$s" class="Footer-segment Footer-segment--one">',
+		'before_widget' => '<aside id="%1$s" class="Footer-segment">',
 		'after_widget'  => '</aside>',
 	);
-	register_sidebar( $args );
+	register_sidebar( $footer_args );
 
+$category_args = array(
+		'id'            => 'category_widgets',
+		'class'         => 'Home-categories',
+		'name'          => 'Homepage Categories',
+		'description'   => 'Category directory on the homepage',
+		'before_title'  => '<h2 class="Home-category-hed">',
+		'after_title'   => '</h2>',
+		'before_widget' => '<aside id="%1$s" class="Home-category-list">',
+		'after_widget'  => '</aside>',
+	);
+	register_sidebar( $category_args );
 
 
 //==========================================================

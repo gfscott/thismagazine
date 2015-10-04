@@ -6,13 +6,15 @@
     
 }
 
-.Home-article {
+.Home-article,
+.Home-feature {
   padding-bottom: 2em;
   margin-bottom: 1em;
   border-bottom: solid 1px #ddd;
 }
 
-.Home-link {
+.Home-link,
+.Home-feature-link {
   display: block;
   height: 100%;
   color: #444;
@@ -24,19 +26,23 @@
   padding: 0;
 }
 
-.Home-hed {
+.Home-hed,
+.Home-feature-hed {
   font-size: 1.4em;
   transition-property: color;
   transition-duration: 0.2s;
 }
 
-.Home-link:hover .Home-hed {
+.Home-link:hover .Home-hed,
+.Home-feature-link:hover .Home-feature-hed {
   color: #d22;
 }
 
-.Home-dek {
+.Home-dek,
+.Home-feature-dek {
   font-weight: normal;
   font-size: 1em;
+  color: #444;
 }
 
 .Home-author {
@@ -51,12 +57,11 @@
   font-size: 0.8em;
 }
 
-  .Home-article .excerpt-more {
+  .Home-article .excerpt-more,
+  .Home-feature .excerpt-more {
     display: inline-block;
     margin-top: 1em;
   }
-
-
 
 @media ( min-width: 40em ) {
 
@@ -68,9 +73,86 @@
     
   }
 
-  .Home-article {
+  .Home-article,
+  .Home-feature {
 
     width: 31%;
-  }  
+  }
+  
+  .Home-feature--1 {
+    width: 100%;
+  }
+  
+  .Home-feature--2 {
+    width: 50%;
+  }
+  
+  .Home-feature--3 {
+    width: 50%;
+  }
+  
+  .Home-feature--4 {
+    width: 100%;
+  }
+  
 
 }
+
+
+
+//----------------------------------------------------------
+// Homepage categories listings
+.Home-categories {
+  
+}
+
+.Home-category-hed {
+  border-bottom: solid 3px #444;
+}
+
+.Home-category-hed a {
+  color: #444;
+  text-decoration: none;
+}
+
+  .Home-category-hed a:hover {
+    color: #d22;
+  }
+
+.Home-category-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+  
+  // the widget renders the post title in a link with class .post-title
+  .Home-category-list a.post-title {
+    display: block;
+    margin-bottom: 1em;
+    color: #444;
+    text-decoration: none;
+  }
+  
+  .Home-category-list a.post-title:hover {
+    color: #d22;
+  }
+  
+
+
+@media ( min-width: 40em ) {
+  
+  .Home-categories {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+  }
+  
+  .Home-category-list {
+    width: 31%;    
+  }
+  
+}
+
+
