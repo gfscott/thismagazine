@@ -1,13 +1,20 @@
 <div class="Wrap-featured">
   <nav class="Featured">
     
+    <?php if ( ! is_home() && $paged != 1 ) : ?>
+    
+    <?php
+      $excludeThisPage = array();
+      array_push($excludeThisPage, $post->ID);
+    ?>
+        
     <?php            
     // WP_Query arguments
     $args = array (
     	'post_type'         => array( 'post' ),
-    	'post_status'       => array( 'published' ),
     	'posts_per_page'    => '4',
-    	'featured'          => 'yes'
+    	'featured'          => 'yes',
+    	'post__not_in'      => $excludeThisPage
     );
     
     // The Query
@@ -31,7 +38,7 @@
     	  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
     <?php endif; ?>
     
-    
+    <?php endif; ?>
     
   </nav>
   
