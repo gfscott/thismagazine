@@ -1181,12 +1181,19 @@ p.wp-caption-text {
   background-color: #1E90FF;
   color: #fff; }
 
+/*
+
 .Option-wrap {
   margin: 0;
   padding: 0;
-  white-space: nowrap; }
+  white-space: nowrap;
+  // This white-space hack was new to me, and completely bonkers
+  // http://stackoverflow.com/questions/6871996/css-two-inline-block-width-50-elements-dont-stack
+}
+
 
 .Option {
+  
   display: block;
   white-space: normal;
   width: 100%;
@@ -1194,50 +1201,115 @@ p.wp-caption-text {
   text-align: center;
   background: #ddd;
   padding: 1em;
+  
   text-decoration: none;
   color: #444;
   font-size: 1.5em;
-  border-radius: 0.33em; }
+  border-radius: 0.33em;
+  
+}
 
 .Option:hover {
   background: green;
-  color: #fff; }
+  color: #fff;
+}
 
-.Option-bestdeal:after {
-  content: "Best deal!";
-  position: absolute;
-  background: gold;
-  color: #444;
-  font-size: 0.75em;
-  margin-top: -2rem;
-  padding: 0.33em;
-  box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.33);
-  -webkit-transform: rotate(10deg);
-          transform: rotate(10deg); }
+@media ( min-width: 40em ) {
+  
+  .Option {
+    display: inline-block;
+    width: 50%;
+  }
+  
+}
+
+  .Option-bestdeal:after{
+    content: "Best deal!";
+    position: absolute;
+    background: gold;
+    color: #444;
+    font-size: 0.75em;
+    margin-top: -2rem;
+    padding: 0.33em;
+    box-shadow: 0.1em 0.1em 0.3em rgba(0,0,0,0.33);
+    transform: rotate(10deg);
+  }
+
+
 
 .Option-hed {
   width: 100%;
+  // this has to be done to fix the nowrap thing going on above
   white-space: normal;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+}
 
 .Option-wrap.is-completed {
-  opacity: 0.4; }
+  opacity: 0.4;
+}
 
 .Option-wrap.is-completed .Option {
   background: #ddd;
-  color: #999; }
+  color: #999;
+}
+
 
 .Option-wrap.is-completed .Option.is-selected {
   background: green;
-  color: #fff; }
+  color: #fff;
+}
 
 .Checkout {
+  
   margin: 1em 0;
   font-size: 1.5em;
   background: green;
   color: #fff;
   padding: 0.5em;
-  border: none; }
+  border: none;
+  
+}
+*/
+.Wrap-subscribe .Subscribe-step {
+  margin: 1em 0;
+  white-space: nowrap; }
+
+.Wrap-subscribe .Subscribe-step.is-completed {
+  opacity: 0.6; }
+
+.Wrap-subscribe input.Pick {
+  display: block; }
+
+.Wrap-subscribe .Address-need {
+  display: none; }
+
+.Wrap-subscribe input[type="radio"] {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.Wrap-subscribe input[type="radio"] + span {
+  display: inline-block;
+  width: 50%;
+  padding: 2em 0;
+  text-align: center;
+  font-size: 1.4em;
+  background: #ddd;
+  cursor: pointer;
+  border-radius: 4px; }
+
+.Wrap-subscribe input[type="radio"]:checked + span {
+  background: green;
+  color: #fff; }
+
+.Paypal-notice {
+  max-width: 60em;
+  white-space: normal; }
 
 .Address {
   width: 100%;
@@ -1547,10 +1619,7 @@ p.wp-caption-text {
     width: 15em;
     float: left; }
   .Skybar-list {
-    font-size: 1em; }
-  .Option {
-    display: inline-block;
-    width: 50%; } }
+    font-size: 1em; } }
 
 @media (min-width: 60em) {
   .Branding {

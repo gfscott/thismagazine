@@ -1,4 +1,5 @@
 // People select a number of subscription options on the subscribe page. .Option class governs them
+/*
 
 .Option-wrap {
   margin: 0;
@@ -86,6 +87,66 @@
   border: none;
   
 }
+*/
+
+
+
+//----------------------------------------------------------
+// Buying options
+
+.Wrap-subscribe {
+
+  
+  .Subscribe-step {
+    margin: 1em 0;
+    white-space: nowrap;
+  }
+  
+  .Subscribe-step.is-completed {
+    opacity: 0.6;
+  }
+  
+  
+  input.Pick { 
+    display: block;
+    }
+  
+  .Address-need { display: none;}
+  
+  input[type="radio"] {
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    height: 1px; margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px;
+  }
+  
+  input[type="radio"] + span {
+    display: inline-block;
+    width: 50%;
+    padding: 2em 0;
+    text-align: center;
+    font-size: 1.4em;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  input[type="radio"]:checked + span {
+    background: green;
+    color: #fff;
+  }
+
+}
+
+.Paypal-notice {
+  max-width: 60em;
+  white-space: normal;
+}
+
+
 
 
 //----------------------------------------------------------
