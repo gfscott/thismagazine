@@ -676,6 +676,106 @@ figure {
   color: #fff;
   background-color: #a22; }
 
+.Donate-step {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between; }
+  .Donate-step label {
+    display: block;
+    -webkit-flex-grow: 1;
+            flex-grow: 1; }
+  .Donate-step label:first-child {
+    margin-right: 0.5em; }
+  .Donate-step label:last-child {
+    margin-left: 0.5em; }
+  .Donate-step input[type="radio"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; }
+  .Donate-step input[type="radio"] + span {
+    display: block;
+    width: 100%;
+    padding: 2em 0;
+    text-align: center;
+    font-size: 1.4em;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 4px; }
+  .Donate-step input[type="radio"]:checked + span {
+    background: green;
+    color: #fff; }
+
+.Donate-opts {
+  margin: 2em 0; }
+
+.Donate-inputs {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin-bottom: 2em; }
+  .Donate-inputs label {
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
+    margin-left: 0.5em;
+    margin-right: 0.5em; }
+  .Donate-inputs label:first-child {
+    margin-left: 0; }
+  .Donate-inputs label:last-child {
+    margin-right: 0; }
+  .Donate-inputs input[type="radio"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; }
+  .Donate-inputs input[type="radio"] + span {
+    display: block;
+    width: 100%;
+    padding: 2em 0;
+    text-align: center;
+    font-size: 1.4em;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 4px; }
+  .Donate-inputs input[type="radio"]:checked + span {
+    background: green;
+    color: #fff; }
+
+.Wrap-onetime-other,
+.Wrap-monthly-other {
+  font-size: 1.4em; }
+
+input.otherAmountError {
+  outline: solid 2px #d22; }
+
+.otherAmountError + span:after {
+  padding-left: 0.5em;
+  font-size: 0.75em;
+  color: #d22;
+  content: "Numbers only, please!"; }
+
+.Onetime-submit,
+.Monthly-submit {
+  width: 100%;
+  margin-top: 2em;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0.5em;
+  background-color: green;
+  color: #fff;
+  border-radius: 3px;
+  border: none; }
+
 /*=========================================================
 /* Categories! */
 .Wrap-footer {

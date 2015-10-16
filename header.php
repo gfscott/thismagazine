@@ -31,22 +31,3 @@
     <?php get_template_part('partials/navigation'); ?>
     
     <?php get_template_part('partials/widgets-before-articles') ?>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

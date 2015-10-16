@@ -51,12 +51,4 @@ add_image_size('fixed300', 300, 170, true);
 add_image_size('dynamic960', 960, 9999);
 add_image_size('fixed960', 960, 540, true);
 
-
-
-
-
-
 ?>
-
-
-
