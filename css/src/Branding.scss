@@ -53,17 +53,10 @@
     
     display: block;
     position: absolute;
-    top: 4em;
     -webkit-transition-duration: 0.2s;
-/*
-    background: #d22;
-    color: #fff;
-    font-size: 0.8em;
-    padding: 0.2em 0.5em;  
-*/  
     font-size: 0.8em;
     color: #bbb;
-    padding: 0.5em;
+    padding: 0.5em 0.5em 1em;
 
   
   }
@@ -81,11 +74,11 @@
 @media (min-width: 60em) {
   
   .Branding {
-    height: 5em;
+    height: 4em;
   }
   
   .Branding-tagline {
-    top: 6em;
+    top: 4em;
   }
   
   

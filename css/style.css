@@ -1574,16 +1574,10 @@ p.wp-caption-text {
   .Branding-tagline {
     display: block;
     position: absolute;
-    top: 4em;
-    -webkit-transition-duration: 0.2s;/*
-    background: #d22;
-    color: #fff;
-    font-size: 0.8em;
-    padding: 0.2em 0.5em;  
-*/
+    -webkit-transition-duration: 0.2s;
     font-size: 0.8em;
     color: #bbb;
-    padding: 0.5em; }
+    padding: 0.5em 0.5em 1em; }
   a:hover .Branding-tagline {
     color: #d22; }
   .Footer {
@@ -1723,9 +1717,9 @@ p.wp-caption-text {
 
 @media (min-width: 60em) {
   .Branding {
-    height: 5em; }
+    height: 4em; }
   .Branding-tagline {
-    top: 6em; }
+    top: 4em; }
   .Wrap-nav-primary,
   .Wrap-nav-primary.is-hidden {
     padding-right: 1em;
