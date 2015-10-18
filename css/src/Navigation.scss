@@ -97,14 +97,9 @@
     display: none;
   }
   
-  .Nav-list .menu-item:hover .sub-menu,
-  .Nav-list .menu-item a:focus + .sub-menu {
+  .Nav-list .menu-item:hover .sub-menu {
     display: block;
-  }
-  
-  
-    
-  
+  } 
   
 }
 

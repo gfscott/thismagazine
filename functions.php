@@ -14,8 +14,46 @@
 
 //==========================================================
 // WIDGETS
+// Register Sidebars
+function widget_zones() {
 
-$footer_args = array(
+	$article_before_args = array(
+		'id'            => 'article_before',
+		'class'         => 'Sidebar-article_before',
+		'name'          => 'Before Articles',
+		'description'   => 'This widget area is added to every site page, just after the header.',
+		'before_title'  => '<h2 class="Widget-header">',
+		'after_title'   => '</h2>',
+		'before_widget' => '<aside id="%1$s" class="Widget">',
+		'after_widget'  => '</aside>',
+	);
+	register_sidebar( $article_before_args );
+
+	$article_after_args = array(
+		'id'            => 'article_after',
+		'class'         => 'Sidebar-article_after',
+		'name'          => 'After Articles',
+		'description'   => 'This widget area is added to the end of very post.',
+		'before_title'  => '<h2 class="Widget-header">',
+		'after_title'   => '</h2>',
+		'before_widget' => '<aside id="%1$s" class="Widget">',
+		'after_widget'  => '</aside>',
+	);
+	register_sidebar( $article_after_args );
+
+	$donate_args = array(
+		'id'            => 'donate',
+		'class'         => 'Sidebar-donate',
+		'name'          => 'Donation appeal',
+		'description'   => 'Link and text of the donation appeal that appears on every article page.',
+		'before_title'  => '<h2 class="Widget-header Widget-donate-header">',
+		'after_title'   => '</h2>',
+		'before_widget' => '<aside id="%1$s" class="Widget Widget-donate">',
+		'after_widget'  => '</aside>',
+	);
+	register_sidebar( $donate_args );
+  
+  $footer_args = array(
 		'id'            => 'footer_widgets',
 		'class'         => 'Footer-widgets',
 		'name'          => 'Footer',
@@ -27,7 +65,7 @@ $footer_args = array(
 	);
 	register_sidebar( $footer_args );
 
-$category_args = array(
+  $category_args = array(
 		'id'            => 'category_widgets',
 		'class'         => 'Home-categories',
 		'name'          => 'Homepage Categories',
@@ -38,6 +76,38 @@ $category_args = array(
 		'after_widget'  => '</aside>',
 	);
 	register_sidebar( $category_args );
+	
+	$cover_args = array(
+		'id'            => 'cover_widget',
+		'class'         => 'Home-cover',
+		'name'          => 'Homepage Cover Image',
+		'description'   => 'Display the latest cover on the homepage',
+		'before_title'  => '<h2 class="Home-cover-hed">',
+		'after_title'   => '</h2>',
+		'before_widget' => '<aside id="%1$s" class="Home-cover">',
+		'after_widget'  => '</aside>',
+	);
+	register_sidebar( $cover_args );
+
+  
+  
+}
+add_action( 'widgets_init', 'widget_zones' );
+
+//==========================================================
+// MENUS
+// Register Navigation Menus
+function custom_navigation_menus() {
+
+	$locations = array(
+		'Primary Site Menu' => 'The most important links on the site.',
+		'Secondary Menu' => 'Good links to have available, but not of primary importance',
+		'Site Meta' => 'Links about This Magazine that appear in the footer'
+	);
+	register_nav_menus( $locations );
+
+}
+add_action( 'init', 'custom_navigation_menus' );
 
 
 //==========================================================

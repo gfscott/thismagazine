@@ -10,7 +10,7 @@
 .Home-feature {
   padding-bottom: 2em;
   margin-bottom: 1em;
-  border-bottom: solid 1px #ddd;
+  border-top: solid 1px #ddd;
 }
 
 .Home-link,
@@ -142,6 +142,38 @@
   
   .Home-category-list {
     width: 31%;    
+  }
+  
+}
+
+
+//----------------------------------------------------------
+// Homepage cover image
+// controlled by a widget in functions.php
+
+.Wrap-home-cover {
+  padding: 0.5em;
+  background-color: #444;
+  color: #eee;
+  margin-bottom: 1em;
+}
+
+  .Wrap-home-cover a {
+    color: #eee;
+  }
+  
+  .Wrap-home-cover a:hover {
+    color: #d22;
+  }
+
+.Home-cover-hed {
+  margin-top: 0.5em;
+}
+
+@media ( min-width: 40em ) {
+  
+  .Wrap-home-cover {
+    width: 31%;
   }
   
 }

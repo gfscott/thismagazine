@@ -118,6 +118,10 @@
     </div>
   </div>
   
+  <div class="Wrap-home-cover">
+    <?php dynamic_sidebar( 'cover_widget' ); ?>
+  </div>
+  
     
 </div>
 
