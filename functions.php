@@ -102,7 +102,7 @@ function custom_navigation_menus() {
 	$locations = array(
 		'Primary Site Menu' => 'The most important links on the site.',
 		'Secondary Menu' => 'Good links to have available, but not of primary importance',
-		'Site Meta' => 'Links about This Magazine that appear in the footer'
+		'Footer Menu' => 'Links about This Magazine that appear in the footer'
 	);
 	register_nav_menus( $locations );
 

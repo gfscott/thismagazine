@@ -1296,6 +1296,11 @@ p.wp-caption-text {
   background-color: #1E90FF;
   color: #fff; }
 
+.Skybar-link--subscribe a:hover,
+.Skybar-link--donate a:hover {
+  background-color: #444;
+  color: #fff; }
+
 /*
 
 .Option-wrap {
