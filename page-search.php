@@ -4,7 +4,9 @@
   
   <div class="Search">
     
-    <h1 class="Search-hed">Search: <span class="Search-query"><?php echo $_GET["q"]; ?></span></h1>
+    <?php $searchterm = $_GET["q"]; ?>
+    
+    <h1 class="Search-hed">Search: <span class="Search-query"><?php echo $searchterm; ?></span></h1>
       
       <div class="Search-results">
 
