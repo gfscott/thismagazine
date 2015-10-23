@@ -399,6 +399,22 @@ figure {
 /*=========================================================
 /* Supersized! */
 
+.Admin {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #d22; }
+
+.Admin a {
+  display: inline-block;
+  font-weight: bold;
+  color: #eee;
+  padding: 0.5em 1em;
+  text-decoration: none; }
+
+.Admin a:hover {
+  background-color: #444; }
+
 .Wrap-leaderboard {
   display: none; }
 

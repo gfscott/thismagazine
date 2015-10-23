@@ -14,6 +14,8 @@
   </head>
   <body>
     
+    <?php get_template_part('partials/admin'); ?>
+    
     <?php get_template_part('partials/ad-leaderboard'); ?>
     
     <?php get_template_part('partials/skybar'); ?>
