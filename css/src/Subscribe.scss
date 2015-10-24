@@ -1,96 +1,3 @@
-// People select a number of subscription options on the subscribe page. .Option class governs them
-/*
-
-.Option-wrap {
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-  // This white-space hack was new to me, and completely bonkers
-  // http://stackoverflow.com/questions/6871996/css-two-inline-block-width-50-elements-dont-stack
-}
-
-
-.Option {
-  
-  display: block;
-  white-space: normal;
-  width: 100%;
-  margin: 0.5em 0;
-  text-align: center;
-  background: #ddd;
-  padding: 1em;
-  
-  text-decoration: none;
-  color: #444;
-  font-size: 1.5em;
-  border-radius: 0.33em;
-  
-}
-
-.Option:hover {
-  background: green;
-  color: #fff;
-}
-
-@media ( min-width: 40em ) {
-  
-  .Option {
-    display: inline-block;
-    width: 50%;
-  }
-  
-}
-
-  .Option-bestdeal:after{
-    content: "Best deal!";
-    position: absolute;
-    background: gold;
-    color: #444;
-    font-size: 0.75em;
-    margin-top: -2rem;
-    padding: 0.33em;
-    box-shadow: 0.1em 0.1em 0.3em rgba(0,0,0,0.33);
-    transform: rotate(10deg);
-  }
-
-
-
-.Option-hed {
-  width: 100%;
-  // this has to be done to fix the nowrap thing going on above
-  white-space: normal;
-  word-wrap: break-word;
-}
-
-.Option-wrap.is-completed {
-  opacity: 0.4;
-}
-
-.Option-wrap.is-completed .Option {
-  background: #ddd;
-  color: #999;
-}
-
-
-.Option-wrap.is-completed .Option.is-selected {
-  background: green;
-  color: #fff;
-}
-
-.Checkout {
-  
-  margin: 1em 0;
-  font-size: 1.5em;
-  background: green;
-  color: #fff;
-  padding: 0.5em;
-  border: none;
-  
-}
-*/
-
-
-
 //----------------------------------------------------------
 // Buying options
 
@@ -99,20 +6,12 @@
   
   .Subscribe-step {
     margin: 1em 0;
-    white-space: nowrap;
   }
   
   .Subscribe-step.is-completed {
     opacity: 0.6;
-  }
-  
-  
-  input.Pick { 
-    display: block;
-    }
-  
-  .Address-need { display: none;}
-  
+  }  
+
   input[type="radio"] {
     border: 0; 
     clip: rect(0 0 0 0); 
@@ -122,11 +21,14 @@
     position: absolute; 
     width: 1px;
   }
-  
+
   input[type="radio"] + span {
-    display: inline-block;
-    width: 50%;
-    padding: 2em 0;
+    display: block;
+    // mobile first, they're full width
+    width: 100%;
+    padding: 1em 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     text-align: center;
     font-size: 1.4em;
     background: #ddd;
@@ -134,10 +36,46 @@
     border-radius: 4px;
   }
   
+  @media ( min-width: 40em ) {
+    
+    // special wrapper div to handle flex display on wider screens
+    .Wrap-picks {
+      display: flex;
+      justify-content: space-between;
+      
+      // have to make the labels full width so that the inputs can flex-grow
+      label {
+        width: 100%;
+        margin: 0 0.5em;
+      }
+      
+      // modify start- and end-margins to fill width of container
+      label:first-child {
+        margin-left: 0;
+      }
+      label:last-child {
+        margin-right: 0;
+      }
+      
+      
+      input[type="radio"] + span {
+        display: block;
+        flex-grow: 1;
+      }
+      
+    }
+    
+    
+    
+  }
+  
+  
   input[type="radio"]:checked + span {
     background: green;
     color: #fff;
   }
+
+
 
 }
 
@@ -175,6 +113,10 @@
   .Address-label:first-child {
     margin-top: 0;
   }
+
+// "required" and "optional" labels are hidden by default
+.Address-need { display: none; }
+
 
 
 

@@ -21,52 +21,66 @@
     <div id="step-1" class="Subscribe-step">
       
       <h2>Who is this subscription for?</h2>
-      <label for="is-self">
-      <input id="is-self" name="is_self" value="true" data-key="who" data-value="self" type="radio" class="Pick Pick-who">
-      <span>Myself!</span>
-      </label>
-    
-      <label for="is-gift">
-      <input id="is-gift" name="is_self" value="false" data-key="who" data-value="gift" type="radio" class="Pick Pick-who">
-      <span>It’s a gift for someone else!</span>
-      </label>
+      
+      <div class="Wrap-picks">
+      
+        <label for="is-self">
+        <input id="is-self" name="is_self" value="true" data-key="who" data-value="self" type="radio" class="Pick Pick-who">
+        <span>Myself!</span>
+        </label>
+      
+        <label for="is-gift">
+        <input id="is-gift" name="is_self" value="false" data-key="who" data-value="gift" type="radio" class="Pick Pick-who">
+        <span>It’s a gift for someone else!</span>
+        </label>
+      
+      </div>
     
     </div>
     
     <div id="step-2" class="Subscribe-step">
       
       <h2>Great! For how long?</h2>
-      <label for="is-1year">
-      <input id="is-1year" name="is_1year" value="true" data-key="duration" data-value=1 type="radio" class="Pick Pick-length">
-      <span>One Year</span>
-      </label>
       
-      <label for="is-2year">
-      <input id="is-2year" name="is_1year" value="false" data-key="duration" data-value=2 type="radio" class="Pick Pick-length">
-      <span>Two Years</span>
-      </label>
-    
+      <div class="Wrap-picks">
+      
+        <label for="is-1year">
+        <input id="is-1year" name="is_1year" value="true" data-key="duration" data-value=1 type="radio" class="Pick Pick-length">
+        <span>One Year</span>
+        </label>
+        
+        <label for="is-2year">
+        <input id="is-2year" name="is_1year" value="false" data-key="duration" data-value=2 type="radio" class="Pick Pick-length">
+        <span>Two Years</span>
+        </label>
+      
+      </div>
+          
     </div>
     
     <div id="step-3" class="Subscribe-step Subscribe-step--3">
       
       <h2>Super! Is the mailing address in Canada, or elsewhere?</h2>
       
-      <label for="is-canada">
-      <input id="is-canada" name="is_canada" value="true" data-key="country" data-value="CA" type="radio" class="Pick Pick-where">
-      <span>Canada</span>
-      </label>
+      <div class="Wrap-picks">
+        
+        <label for="is-canada">
+        <input id="is-canada" name="is_canada" value="true" data-key="country" data-value="CA" type="radio" class="Pick Pick-where">
+        <span>Canada</span>
+        </label>
+        
+        <label for="is-usa">
+        <input id="is-usa" name="is_canada" value="false" data-key="country" data-value="US" type="radio" class="Pick Pick-where">
+        <span>U.S.</span>
+        </label>
+        
+        <label for="is-international">
+        <input id="is-international" name="is_canada" value="false" data-key="country" data-value="intl" type="radio" class="Pick Pick-where">
+        <span>International</span>
+        </label>
       
-      <label for="is-usa">
-      <input id="is-usa" name="is_canada" value="false" data-key="country" data-value="US" type="radio" class="Pick Pick-where">
-      <span>U.S.</span>
-      </label>
+      </div>
       
-      <label for="is-international">
-      <input id="is-international" name="is_canada" value="false" data-key="country" data-value="intl" type="radio" class="Pick Pick-where">
-      <span>International</span>
-      </label>
-
     </div>
     
     <div id="step-4" class="Subscribe-step">
