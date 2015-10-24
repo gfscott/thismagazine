@@ -8,7 +8,7 @@
       
     </div>
     
-    <script src="<?php bloginfo('template_url'); ?>/js/script.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/script-433e2a8c79.min.js"></script>
     
     <?php // wp_footer(); ?>
     

@@ -7,7 +7,7 @@
     
     <title><?php bloginfo("name"); wp_title(" → ", true, "left"); ?></title>
     
-    <link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/style.css">
+    <link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/style-7e76cc2901.min.css">
     
     <?php get_template_part('partials/ad-header-scripts'); ?>
     
