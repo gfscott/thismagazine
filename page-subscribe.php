@@ -57,6 +57,11 @@
       <span>Canada</span>
       </label>
       
+      <label for="is-usa">
+      <input id="is-usa" name="is_canada" value="false" data-key="country" data-value="US" type="radio" class="Pick Pick-where">
+      <span>U.S.</span>
+      </label>
+      
       <label for="is-international">
       <input id="is-international" name="is_canada" value="false" data-key="country" data-value="intl" type="radio" class="Pick Pick-where">
       <span>International</span>
@@ -106,6 +111,65 @@
         	<option value="QC" data-tax1="1.33" data-tax2="2.05" data-taxtype="GST">Quebec</option>
         	<option value="SK" data-tax1="1.33" data-tax2="2.05" data-taxtype="GST">Saskatchewan</option>
         	<option value="YT" data-tax1="1.33" data-tax2="2.05" data-taxtype="GST">Yukon</option>
+      	</select>
+      	<span class="Address-need Address-need--req">(Required)</span>
+      </div>
+      
+      <div id="us-state" class="is-hidden">
+      	<label class="Address-label Address-province-label" for="us-state">State:</label>
+      	<select class="Address-select Address-province" name="usState">
+        	<option value="">Select State:</option>
+        	<option value="AL">Alabama</option>
+        	<option value="AK">Alaska</option>
+        	<option value="AZ">Arizona</option>
+        	<option value="AR">Arkansas</option>
+        	<option value="CA">California</option>
+        	<option value="CO">Colorado</option>
+        	<option value="CT">Connecticut</option>
+        	<option value="DE">Delaware</option>
+        	<option value="DC">District Of Columbia</option>
+        	<option value="FL">Florida</option>
+        	<option value="GA">Georgia</option>
+        	<option value="HI">Hawaii</option>
+        	<option value="ID">Idaho</option>
+        	<option value="IL">Illinois</option>
+        	<option value="IN">Indiana</option>
+        	<option value="IA">Iowa</option>
+        	<option value="KS">Kansas</option>
+        	<option value="KY">Kentucky</option>
+        	<option value="LA">Louisiana</option>
+        	<option value="ME">Maine</option>
+        	<option value="MD">Maryland</option>
+        	<option value="MA">Massachusetts</option>
+        	<option value="MI">Michigan</option>
+        	<option value="MN">Minnesota</option>
+        	<option value="MS">Mississippi</option>
+        	<option value="MO">Missouri</option>
+        	<option value="MT">Montana</option>
+        	<option value="NE">Nebraska</option>
+        	<option value="NV">Nevada</option>
+        	<option value="NH">New Hampshire</option>
+        	<option value="NJ">New Jersey</option>
+        	<option value="NM">New Mexico</option>
+        	<option value="NY">New York</option>
+        	<option value="NC">North Carolina</option>
+        	<option value="ND">North Dakota</option>
+        	<option value="OH">Ohio</option>
+        	<option value="OK">Oklahoma</option>
+        	<option value="OR">Oregon</option>
+        	<option value="PA">Pennsylvania</option>
+        	<option value="RI">Rhode Island</option>
+        	<option value="SC">South Carolina</option>
+        	<option value="SD">South Dakota</option>
+        	<option value="TN">Tennessee</option>
+        	<option value="TX">Texas</option>
+        	<option value="UT">Utah</option>
+        	<option value="VT">Vermont</option>
+        	<option value="VA">Virginia</option>
+        	<option value="WA">Washington</option>
+        	<option value="WV">West Virginia</option>
+        	<option value="WI">Wisconsin</option>
+        	<option value="WY">Wyoming</option>
       	</select>
       	<span class="Address-need Address-need--req">(Required)</span>
       </div>
@@ -490,12 +554,21 @@ Toronto, ON M5V 3A8
     if ( buyer.country === "intl") {
       
       document.getElementById("ca-province").classList.add("is-hidden");
+      document.getElementById("us-state").classList.add("is-hidden");
       document.getElementById("intl-state").classList.remove("is-hidden");
       document.getElementById("intl-country").classList.remove("is-hidden");
             
+    } else if ( buyer.country === "US" ) {
+      
+      document.getElementById("us-state").classList.remove("is-hidden");
+      document.getElementById("ca-province").classList.add("is-hidden");
+      document.getElementById("intl-state").classList.add("is-hidden");
+      document.getElementById("intl-country").classList.add("is-hidden");
+      
     } else if ( buyer.country === "CA" ) {
       
       document.getElementById("ca-province").classList.remove("is-hidden");
+      document.getElementById("us-state").classList.add("is-hidden");
       document.getElementById("intl-state").classList.add("is-hidden");
       document.getElementById("intl-country").classList.add("is-hidden");
       
@@ -551,7 +624,7 @@ Toronto, ON M5V 3A8
   function updatePrice(){
     
     // calculate the price using the data-attributes on the individual province options
-    if( buyer.country == "CA" ){
+    if( buyer.country === "CA" ){
           
       // find the province selector
       var prov = document.querySelector(".Address-province");      
@@ -617,7 +690,34 @@ Toronto, ON M5V 3A8
     var priceHolder = document.querySelector(".Sub-price");
     var thePrice    = document.getElementById("sub-price-amount");
     
-    if ( prov.value.length > 0 && buyer.price.total > 0 || state.value.length > 0 && buyer.price.total > 0 ) {
+    // only show/update the price if it's greater than zero
+    if ( buyer.price.total > 0 ) {
+      
+      // if the country is canada we have tax stuff to do
+      if ( buyer.country === "CA" ) {
+        
+        // only display once the province has been selected!
+        if ( prov.value.length > 0 ) {
+          
+          thePrice.innerHTML = '<span class="sub-price-amount--base">$' + buyer.price.base.toFixed(2) + '</span> + <span class="sub-price-amount--tax">$' + buyer.price.tax.toFixed(2) + ' ' + buyer.price.taxType + '</span> = <span class="sub-price-amount--total">$' + buyer.price.total.toFixed(2) + '</span>';
+          priceHolder.classList.remove("is-hidden");
+          
+        }       
+        
+      // if it's not Canada the price is uniform anyway so it doesn't matter. US, Intl prices are same
+      } else {
+        
+        thePrice.innerHTML = "CAD$" + buyer.price.total.toFixed(2);
+        priceHolder.classList.remove("is-hidden");
+        
+      }
+      
+      
+    }
+    
+    
+    /*
+if ( prov.value.length > 0 && buyer.price.total > 0 || state.value.length > 0 && buyer.price.total > 0 ) {
       
       if ( buyer.country === "CA" ) {
       
@@ -631,6 +731,7 @@ Toronto, ON M5V 3A8
         
       }
     }
+*/
 
     
   };
@@ -646,6 +747,10 @@ Toronto, ON M5V 3A8
       
       payPalState.value = buyer.province;
       
+    } else if ( buyer.country === "US" ) {
+      
+      payPalState.value = buyer.usState;
+    
     } else {
       
       payPalState.value = buyer.stateOther;
