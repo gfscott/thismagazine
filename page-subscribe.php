@@ -382,7 +382,7 @@
     	<span class="Address-need Address-need--req">(Required)</span>
     	
     	<div class="Wrap-address-optout">
-    		<label class="Address-label Address-optout-label" for="optout">Check to opt out of all email from <em>This</em> (except related to this subscription):
+    		<label class="Address-label Address-optout-label" for="optout">Your privacy is important to us. From time to time other like-minded magazines and organizations may ask if they can send special offers to our subscribers. If you do not want your contact information made available, please check here:
       		<input class="Address-input Address-optout" type="checkbox" name="optout">
     		</label>
     	</div>
@@ -580,13 +580,13 @@ Toronto, ON M5V 3A8
       
       if ( buyer.duration == 2 ) {
       
-        buyer.price.base = 120.00;
+        buyer.price.base = 68.00;
         buyer.price.tax = 0;
         buyer.price.total = buyer.price.base;
       
       } else {
         
-        buyer.price.base = 60.00;
+        buyer.price.base = 40.00;
         buyer.price.tax = 0;
         buyer.price.total = buyer.price.base;
         
