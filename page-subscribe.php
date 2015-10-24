@@ -92,7 +92,7 @@
       <div id="ca-province">
       	<label class="Address-label Address-province-label" for="province">Province:</label>
       	<select class="Address-select Address-province" name="province">
-      		<option value="">Select Province/State:</option>
+      		<option value="">Select Province:</option>
         	<option value="AB" data-tax1="1.33" data-tax2="2.05" data-taxtype="GST">Alberta</option>
         	<option value="BC" data-tax1="1.33" data-tax2="2.05" data-taxtype="GST">British Columbia</option>
         	<option value="MB" data-tax1="1.33" data-tax2="2.05" data-taxtype="GST">Manitoba</option>
@@ -409,6 +409,7 @@
       <!-- Paypal fields that change dynamically during the subscription fillout process -->
       <input type="hidden" id="paypal_item" name="item_name" value="One-year subscription"> <!-- val -->
       <input type="hidden" id="paypal_state" name="state" value="">
+      <input type="hidden" id="paypal_custom_optout" name="custom" value="Privacy option: Contact OK">
       <input type="hidden" id="paypal_amount" name="amount" value="">
       <input type="hidden" id="paypal_tax" name="tax" value="">
     
@@ -482,7 +483,7 @@ Toronto, ON M5V 3A8
   // function to call when new information has been added
   function refresher() {
     
-    // console.log(buyer);
+    console.log(buyer);
     
     // test the location    
     // by default, we assume a Canadian buyer. the other options 
@@ -508,6 +509,7 @@ Toronto, ON M5V 3A8
     updatePrice();
     updateItem();
     updateState();
+    updatePrivacy();
     updateGiftMsg();
     
   };
@@ -619,7 +621,7 @@ Toronto, ON M5V 3A8
       
       if ( buyer.country === "CA" ) {
       
-        thePrice.innerHTML = "$" + buyer.price.total.toFixed(2);
+        thePrice.innerHTML = '<span class="sub-price-amount--base">$' + buyer.price.base.toFixed(2) + '</span> + <span class="sub-price-amount--tax">$' + buyer.price.tax.toFixed(2) + ' ' + buyer.price.taxType + '</span> = <span class="sub-price-amount--total">$' + buyer.price.total.toFixed(2) + '</span>';
         priceHolder.classList.remove("is-hidden");
       
       } else {
@@ -671,6 +673,26 @@ Toronto, ON M5V 3A8
     
     
   }
+  
+  //----------------------------------------------------------------------------
+  // Update the Privacy Opt-out value
+  
+  function updatePrivacy() {
+    
+    var payPalPrivacy = document.getElementById("paypal_custom_optout");
+    
+    if ( buyer.optout === "off" ) {
+      
+      payPalPrivacy.value = "Privacy option: Contact OK";
+      
+    } else if ( buyer.optout === "on") {
+      
+      payPalPrivacy.value = "Privacy option: DO NOT CONTACT";
+      
+    }
+    
+  }
+  
   
   //----------------------------------------------------------------------------
   // Update a helpful gift message to let people know they're filling in the recipient's address, not their own
