@@ -173,10 +173,6 @@
 
   <hr>
   
-  <p><em>This Magazine</em> is published six times a year. Please allow 6-8 weeks for delivery of your first issue. Plus GST/HST where applicable.</p>
-  
-  <hr>
-  
   <h2>Other ways to donate</h2>
 		
 		<p>Nervous about donating online? You don’t need to be, but we completely understand if you are. You can also support us by:</p>

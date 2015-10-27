@@ -530,10 +530,6 @@ Toronto, ON M5V 3A8
       </tr>
     </table>
     
-    <p>Please review our <a href="#">policy statement</a>.</p>
-  
-  
-
 </div>
 
 <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Array.prototype.indexOf,document.querySelector,Element.prototype.classList,Event"></script>
