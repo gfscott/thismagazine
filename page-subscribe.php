@@ -7,7 +7,13 @@
     <h1 class="Page-hed"><?php the_title(); ?></h1>
           
     <div class="Page-text">
+      
+      <div class="Wrap-shop-menu">
+        <?php dynamic_sidebar( 'shop_widget' ); ?>
+      </div>
+      
       <?php the_content(); ?>
+      
     </div>
         
   <?php endwhile; else : ?>

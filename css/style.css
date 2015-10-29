@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -1455,6 +1456,38 @@ p.wp-caption-text {
   padding: 0.2em; }
 
 /*=========================================================
+// Shop.this.org menu options
+// The subscribe page holds a menu widget with other ways
+// to buy the magazine. The content is controlled through
+// Wordpress widgets.
+*/
+.Wrap-shop-menu {
+  background-color: #ddd;
+  padding: 1em;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
+
+.Shop-links {
+  margin: 1em 0 0;
+  padding: 0;
+  list-style: none; }
+
+.Shop-links li {
+  margin-bottom: 0.5em; }
+
+.Shop-links a {
+  display: block;
+  padding: 0.25em 0.5em;
+  background-color: #d22;
+  color: #fff;
+  text-decoration: none; }
+
+.Shop-links a:after {
+  content: " »"; }
+
+.Shop-links a:hover {
+  background-color: #444; }
+
+/*=========================================================
 /* Subscribe Page OTHER OPTIONS */
 .Sub-methods {
   width: 100%;
@@ -1470,70 +1503,70 @@ p.wp-caption-text {
 .Sub-method--name {
   font-weight: bold; }
 
-@media (max-width: 30em) {
-  h1.hed {
+@media (max-width: 30em){
+  h1.hed{
     font-size: 1.4em; }
-  h2.dek {
+  h2.dek{
     font-size: 1.2em; }
-  p {
+  p{
     font-size: 1em; } }
 
-@media (min-width: 64em) {
-  h1.hed {
+@media (min-width: 64em){
+  h1.hed{
     font-size: 3em; } }
 
-@media (min-width: 750px) {
-  .Wrap-leaderboard {
+@media (min-width: 750px){
+  .Wrap-leaderboard{
     display: block;
     margin: 0;
     padding: 0.5em;
     background-color: #444; }
-  .Leaderboard {
+  .Leaderboard{
     width: 728px;
     height: 90px;
     margin: 0 auto; } }
 
-@media (min-width: 40em) {
-  .Wrap-bigbox.js-rendered {
+@media (min-width: 40em){
+  .Wrap-bigbox.js-rendered{
     margin: 0 0 2em 2em;
     float: right; }
-  .Pagination-list {
+  .Pagination-list{
     padding: 0;
     height: 2em; }
-  .Archive-label {
+  .Archive-label{
     font-size: 3em; }
-  .Wrap-cover-image {
+  .Wrap-cover-image{
     max-width: 300px;
     float: left;
     margin-bottom: 1em;
     margin-right: 1em; }
-  .Article-hed {
+  .Article-hed{
     font-size: 3em; }
-  .Article-dek {
+  .Article-dek{
     font-size: 1.4em; }
-  .Wrap-text p {
+  .Wrap-text p{
     font-size: 1.2em; }
-  .Branding {
+  .Branding{
     height: 3em; }
-  .Branding-tagline {
+  .Branding-tagline{
     display: block;
     position: absolute;
     -webkit-transition-duration: 0.2s;
     font-size: 0.8em;
     color: #bbb;
     padding: 0.5em 0.5em 1em; }
-  a:hover .Branding-tagline {
+  a:hover .Branding-tagline{
     color: #d22; }
-  .Footer {
+  .Footer{
     display: -webkit-flex;
     display: flex; }
-  .Footer-segment {
+  .Footer-segment{
     width: 33%;
     margin: 0 1em; }
-  .Wrap-header {
+  .Wrap-header{
     margin-top: 2em;
     margin-bottom: 3em; }
-  .Wrap-home {
+  .Wrap-home{
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
@@ -1541,151 +1574,157 @@ p.wp-caption-text {
     -webkit-justify-content: space-between;
     justify-content: space-between; }
   .Home-article,
-  .Home-feature {
+  .Home-feature{
     width: 31%; }
-  .Home-feature--1 {
+  .Home-feature--1{
     width: 100%; }
-  .Home-feature--1 .Home-feature-hed {
+  .Home-feature--1 .Home-feature-hed{
     font-size: 2.8rem; }
-  .Home-categories {
+  .Home-categories{
     display: -webkit-flex;
     display: flex;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     -webkit-justify-content: space-between;
     justify-content: space-between; }
-  .Home-category-list {
+  .Home-category-list{
     width: 31%; }
-  .Wrap-home-cover {
+  .Wrap-home-cover{
     width: 31%; }
-  .alignleft {
+  .alignleft{
     float: left;
     margin-right: 1em;
     margin-bottom: 1em; }
-  .alignright {
+  .alignright{
     float: right;
     margin-left: 1em;
     margin-bottom: 1em; }
   .aligncenter,
-  .aligncenter img {
+  .aligncenter img{
     margin-left: auto;
     margin-right: auto; }
-  .aligncenter p.wp-caption-text {
+  .aligncenter p.wp-caption-text{
     text-align: center; }
-  .Nav-list .menu-item {
+  .Nav-list .menu-item{
     position: relative;
     width: auto; }
-  .Nav-list .menu-item .sub-menu {
+  .Nav-list .menu-item .sub-menu{
     position: absolute;
     left: -0.5em;
     top: 1.5em;
     padding: 0 0.5em;
     background-color: #d22;
     white-space: nowrap; }
-  .Nav-list .menu-item .sub-menu a {
+  .Nav-list .menu-item .sub-menu a{
     display: block;
     margin: 0.5em 0; }
-  .Nav-list .menu-item .sub-menu {
+  .Nav-list .menu-item .sub-menu{
     display: none; }
-  .Nav-list .menu-item:hover .sub-menu {
+  .Nav-list .menu-item:hover .sub-menu{
     display: block; }
-  .Nav-toggle {
+  .Nav-toggle{
     display: none; }
   .Wrap-nav-primary,
-  .Wrap-nav-primary.is-hidden {
+  .Wrap-nav-primary.is-hidden{
     margin: 0 auto;
     max-width: 60em;
     max-width: 60rem;
     display: -webkit-flex;
     display: flex; }
-  .Nav-primary {
+  .Nav-primary{
     width: 70%;
     background: #d22; }
-  .Wrap-searchbar {
+  .Wrap-searchbar{
     width: 30%;
     margin: 0;
     padding: 0;
     background: #d22; }
-  .Searchbar {
+  .Searchbar{
     padding: 0.5em; }
-  .Searchbar-query {
+  .Searchbar-query{
     padding: 0.5em 0.5em 0.5em 2em; }
-  .Searchbar-submit {
+  .Searchbar-submit{
     background-color: #d22;
     transition-property: background-color;
     transition-duration: 0.2s; }
-  .Searchbar-query:focus + .Searchbar-submit {
+  .Searchbar-query:focus + .Searchbar-submit{
     background-color: #1E90FF; }
-  .Searchbar-submit:focus {
+  .Searchbar-submit:focus{
     background-color: #1E90FF; }
-  .Wrap-nav-primary {
+  .Wrap-nav-primary{
     position: relative;
     top: auto;
     background: transparent;
     margin-bottom: 2em; }
-  .Nav-list {
+  .Nav-list{
     margin: 0 auto;
     max-width: 60em; }
   .Nav-list .menu-item,
-  .Nav-list .menu-item a {
+  .Nav-list .menu-item a{
     display: inline;
     margin-bottom: 0; }
-  .Nav-list .menu-item a {
+  .Nav-list .menu-item a{
     background: #d22;
     color: #fff; }
-  .Nav-list .menu-item a:hover {
+  .Nav-list .menu-item a:hover{
     background: #1E90FF;
     color: #fff; }
-  .Featured-article {
+  .Featured-article{
     display: block; }
-  .Page-hed {
+  .Page-hed{
     font-size: 3em; }
-  .Page-text p {
+  .Page-text p{
     font-size: 1.2em;
     line-height: 1.6em; }
-  .Related {
+  .Related{
     padding-left: 0;
     padding-right: 0; }
-  .Share-button {
+  .Share-button{
     font-size: 1em; }
-  .Wrap-sidebar {
+  .Wrap-sidebar{
     padding: 0; }
-  .Wrap-sidebar--article_before {
+  .Wrap-sidebar--article_before{
     padding: 0 1em;
     max-width: 60em; }
-  .Widget-donate.js-layout {
+  .Widget-donate.js-layout{
     margin: 0 1em 1em 0;
     width: 15em;
     float: left; }
-  .Skybar-list {
+  .Skybar-list{
     font-size: 1em; }
-  .Wrap-subscribe .Wrap-picks {
+  .Wrap-subscribe .Wrap-picks{
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: space-between;
     justify-content: space-between; }
-  .Wrap-subscribe .Wrap-picks label {
+  .Wrap-subscribe .Wrap-picks label{
     width: 100%;
     margin: 0 0.5em; }
-  .Wrap-subscribe .Wrap-picks label:first-child {
+  .Wrap-subscribe .Wrap-picks label:first-child{
     margin-left: 0; }
-  .Wrap-subscribe .Wrap-picks label:last-child {
+  .Wrap-subscribe .Wrap-picks label:last-child{
     margin-right: 0; }
-  .Wrap-subscribe .Wrap-picks input[type="radio"] + span {
+  .Wrap-subscribe .Wrap-picks input[type="radio"] + span{
     display: block;
     -webkit-flex-grow: 1;
-    flex-grow: 1; } }
+    flex-grow: 1; }
+  .Wrap-subscribe .Page-text{
+    overflow: hidden; }
+  .Wrap-shop-menu{
+    max-width: 33%;
+    float: right;
+    margin-left: 2em; } }
 
-@media (min-width: 60em) {
-  .Branding {
+@media (min-width: 60em){
+  .Branding{
     height: 4em; }
-  .Branding-tagline {
+  .Branding-tagline{
     top: 4em; }
   .Wrap-nav-primary,
-  .Wrap-nav-primary.is-hidden {
+  .Wrap-nav-primary.is-hidden{
     padding-right: 1em;
     padding-left: 1em; }
-  .Widget-donate.js-layout {
+  .Widget-donate.js-layout{
     font-size: 1em; } }
 
 /*# sourceMappingURL=style.css.map */

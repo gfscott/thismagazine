@@ -233,20 +233,62 @@
 
 
 
+/*=========================================================
+// Shop.this.org menu options
+// The subscribe page holds a menu widget with other ways
+// to buy the magazine. The content is controlled through
+// Wordpress widgets.
+*/
 
+.Wrap-shop-menu {
+  
+  background-color: #ddd;
+  padding: 1em;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
+}
 
-@media (min-width: 40em) {
-  
-  .Address {
-    
-    
-  }
-  
+.Shop-links {
+  margin: 1em 0 0;
+  padding: 0;
+  list-style: none;  
+}
+
+.Shop-links li {
+  margin-bottom: 0.5em;  
+}
+
+.Shop-links a {
+  display: block;
+  padding: 0.25em 0.5em;
+  background-color: #d22;
+  color: #fff;
+  text-decoration: none;  
+}
+
+.Shop-links a:after {
+  content: " »";
+}
+
+.Shop-links a:hover {
+  background-color: #444;
 }
 
 
-
-
+@media ( min-width: 40em ) {
+  
+  // Have to add this so that the alternate buying methods don't overflow to the subscribe form 
+  .Wrap-subscribe .Page-text {
+    overflow: hidden;
+  }
+  
+  
+  .Wrap-shop-menu {
+    max-width: 33%;
+    float: right;
+    margin-left: 2em;
+  }
+  
+}
 
 
 

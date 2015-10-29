@@ -88,7 +88,18 @@ function widget_zones() {
 		'after_widget'  => '</aside>',
 	);
 	register_sidebar( $cover_args );
-
+	
+	$shop_args = array(
+		'id'            => 'shop_widget',
+		'class'         => 'Shop-menu',
+		'name'          => 'Alternate Subscription Options',
+		'description'   => 'Other options for buying the magazine',
+		'before_title'  => '<h2 class="Shop-menu-hed">',
+		'after_title'   => '</h2>',
+		'before_widget' => '<aside id="%1$s" class="Shop-menu">',
+		'after_widget'  => '</aside>',
+	);
+	register_sidebar( $shop_args );
   
   
 }
