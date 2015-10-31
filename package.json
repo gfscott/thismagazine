@@ -8,6 +8,7 @@
   },
   "author": "Graham F. Scott",
   "license": "MIT",
+  "repository": "https://github.com/gfscott/thismagazine",
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "css-mqpacker": "^4.0.0",
