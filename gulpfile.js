@@ -5,6 +5,7 @@ var gulp          = require('gulp'),
     postcss       = require('gulp-postcss'),
     autoprefixer  = require('autoprefixer'),
     cssnano       = require('cssnano'),
+    flexfixer     = require('postcss-flexboxfixer'),
     mqpacker      = require('css-mqpacker'),
     sourcemaps    = require('gulp-sourcemaps'),
     rename        = require('gulp-rename'),
@@ -113,7 +114,8 @@ gulp.task('compile-styles', function(){
     .pipe(concat('style.css'))
     .pipe(sass())
     .pipe(postcss([
-      autoprefixer({ browsers: ['> 2% in CA'] }),
+      autoprefixer(),
+      flexfixer(),
       mqpacker()
     ]))
     .pipe(sourcemaps.write('.'))
@@ -124,8 +126,9 @@ gulp.task('compile-styles', function(){
     .pipe(concat('style.min.css'))
     .pipe(sass())
     .pipe(postcss([
-      autoprefixer({ browsers: [ '> 2% in CA' ] }),
+      autoprefixer(),
       mqpacker(),
+      flexfixer(),
       cssnano()
     ]))
     .pipe(gulp.dest('css'))
