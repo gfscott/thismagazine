@@ -25,6 +25,7 @@
   // PNG fallback for IE etc, SVG for good browsers
   // https://css-tricks.com/a-complete-guide-to-svg-fallbacks/
   background-image: url('../img/this-logo.png');
+  // http://stackoverflow.com/questions/2991623/how-do-i-make-background-size-work-in-ie
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
         src='../img/this-logo.png',
         sizingMethod='scale');
@@ -59,7 +60,7 @@
     position: absolute;
     -webkit-transition-duration: 0.2s;
     font-size: 0.8em;
-    color: #bbb;
+    color: #777;
     padding: 0.5em 0.5em 1em;
 
   

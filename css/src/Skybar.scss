@@ -54,26 +54,25 @@
   color: #fff;
 }
 
-
+.Skybar-link--subscribe a,
+.Skybar-link--donate a,
+.Skybar-link--subscribe a:hover,
+.Skybar-link--donate a:hover {
+  color: #fff;
+}
 
 .Skybar-link--subscribe a {
   background-color: #d22;
-  color: #fff;
 }
-
 
 .Skybar-link--donate a {
   background-color: #1E90FF;
-  color: #fff;  
 }
 
-.Skybar-link--subscribe a:hover,
+.Skybar-link--subscribe a:hover {
+  background-color: #a22;
+}
+
 .Skybar-link--donate a:hover {
-  background-color: #444;
-  color: #fff;
+  background-color: #4169E1;
 }
-
-
-
-
-

@@ -514,7 +514,7 @@ figure {
 .Wrap-archive-item {
   margin: 2em auto;
   padding-bottom: 2em;
-  border-bottom: solid 1px #bbb; }
+  border-bottom: solid 1px #ddd; }
 
 .Wrap-archive-item .Article-header {
   max-width: 60em; }
@@ -535,7 +535,7 @@ figure {
 
 .Wrap-issue-header {
   overflow-y: hidden;
-  border-bottom: solid 1px #bbb; }
+  border-bottom: solid 1px #ddd; }
 
 .Wrap-cover-image {
   margin: 0; }
@@ -582,7 +582,7 @@ figure {
 .Wrap-text p.Author-bio {
   margin-top: 3rem;
   padding-top: 1rem;
-  border-top: solid 1px #bbb;
+  border-top: solid 1px #777;
   font-size: 0.8em;
   font-style: italic;
   color: #777; }
@@ -848,7 +848,7 @@ input.otherAmountError {
   font-size: 1rem;
   padding-bottom: 0.5em;
   margin-bottom: 1em;
-  border-bottom: solid 3px #bbb; }
+  border-bottom: solid 3px #777; }
 
 .Footer-menu {
   margin: 0;
@@ -1365,18 +1365,23 @@ p.wp-caption-text {
   background-color: #3b5998;
   color: #fff; }
 
-.Skybar-link--subscribe a {
-  background-color: #d22;
-  color: #fff; }
-
-.Skybar-link--donate a {
-  background-color: #1E90FF;
-  color: #fff; }
-
+.Skybar-link--subscribe a,
+.Skybar-link--donate a,
 .Skybar-link--subscribe a:hover,
 .Skybar-link--donate a:hover {
-  background-color: #444;
   color: #fff; }
+
+.Skybar-link--subscribe a {
+  background-color: #d22; }
+
+.Skybar-link--donate a {
+  background-color: #1E90FF; }
+
+.Skybar-link--subscribe a:hover {
+  background-color: #a22; }
+
+.Skybar-link--donate a:hover {
+  background-color: #4169E1; }
 
 .Wrap-subscribe .Subscribe-step {
   margin: 1em 0; }
@@ -1614,7 +1619,7 @@ p.wp-caption-text {
     position: absolute;
     -webkit-transition-duration: 0.2s;
     font-size: 0.8em;
-    color: #bbb;
+    color: #777;
     padding: 0.5em 0.5em 1em; }
   a:hover .Branding-tagline{
     color: #d22; }
