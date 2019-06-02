@@ -106,6 +106,48 @@ function widget_zones() {
 add_action( 'widgets_init', 'widget_zones' );
 
 //==========================================================
+// WP CRUFT
+// Remove useless WordPress stuff from <head>
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 ); 
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' ); 
+remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
+// don't load the default gutenberg block css library since we don't use gutenberg
+add_action( 'wp_enqueue_scripts', function() {
+  wp_dequeue_style( 'wp-block-library' );
+} );
+// don't show the wordpress version
+remove_action('wp_head', 'wp_generator');
+// don't expose the xmlrpc endpoint
+remove_action ('wp_head', 'rsd_link');
+// remove wlwmanifest
+remove_action( 'wp_head', 'wlwmanifest_link');
+
+// completely disable wp-json access
+// https://gist.github.com/timwhitlock/ef62645c41ca61718fb2be7adcb641c6
+add_filter( 'rest_authentication_errors', function( $access ){
+    return new WP_Error( 'rest_cannot_access', 'Bye', array( 'status' => 403 ) );
+} );
+// also remove actions added by wp-includes/default-filters.php
+remove_action( 'wp_head', 'rest_output_link_wp_head' );
+remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+remove_action( 'template_redirect', 'rest_output_link_header' );
+
+// Dequeue yarpp Widgets CSS Style Sheet
+// https://crunchify.com/deregister-yarpp-contact-form-7-css-wordpress-optimization/
+add_action('wp_print_styles','crunchify_dequeue_header_styles');
+function crunchify_dequeue_header_styles()
+{
+  wp_dequeue_style('yarppWidgetCss');
+}
+// Dequeue yarpp Related CSS Style Sheet
+add_action('get_footer','crunchify_dequeue_footer_styles');
+function crunchify_dequeue_footer_styles()
+{
+  wp_dequeue_style('yarppRelatedCss');
+}
+
+//==========================================================
 // MENUS
 // Register Navigation Menus
 function custom_navigation_menus() {
