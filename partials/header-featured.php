@@ -21,8 +21,7 @@
     $featured = new WP_Query( $args );
     ?>          
     <?php if ( $featured->have_posts() ) : ?>
-    	<?php while ( $featured->have_posts() ) : $featured->the_post(); ?>
-    	  
+    <?php for ( $i = 1; $i <=4; $i++ ) { $featured->the_post(); // `posts_per_page` was breaking so a hardcoded `for` loop was necessary ?>
     		<div class="Featured-article">
       		<a class="Featured-article-link" href="<?php the_permalink(); ?>">
         		<?php if ( has_post_thumbnail() ) : ?>
@@ -31,8 +30,7 @@
         		<h2 class="Featured-article-hed<?php if ( ! has_post_thumbnail() ) { echo " Featured-article-hed--nothumb"; } ?>"><?php the_title(); ?></h2>
       		</a>
     		</div>
-    	
-    	<?php endwhile; ?>
+        <?php } ?>
         <?php wp_reset_postdata(); ?>
       <?php else : ?>
     	  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
