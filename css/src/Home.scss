@@ -1,9 +1,7 @@
 .Wrap-home {
-  
   margin: 1em auto;
   max-width: 60em;
   padding: 1em;
-    
 }
 
 .Home-article,
@@ -57,44 +55,36 @@
   font-size: 0.8em;
 }
 
-  .Home-article .excerpt-more,
-  .Home-feature .excerpt-more {
-    display: inline-block;
-    margin-top: 1em;
-  }
+.Home-article .excerpt-more,
+.Home-feature .excerpt-more {
+  display: inline-block;
+  margin-top: 1em;
+}
 
-@media ( min-width: 40em ) {
-
+@media (min-width: 40em) {
   .Wrap-home {
-    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
   }
 
   .Home-article,
   .Home-feature {
-
     width: 31%;
   }
-  
+
   .Home-feature--1 {
     width: 100%;
   }
-  
+
   .Home-feature--1 .Home-feature-hed {
     font-size: 2.8rem;
-  } 
-
+  }
 }
-
-
 
 //----------------------------------------------------------
 // Homepage categories listings
 .Home-categories {
-  
 }
 
 .Home-category-hed {
@@ -106,46 +96,39 @@
   text-decoration: none;
 }
 
-  .Home-category-hed a:hover {
-    color: #d22;
-  }
+.Home-category-hed a:hover {
+  color: #d22;
+}
 
 .Home-category-list ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-  
-  // the widget renders the post title in a link with class .post-title
-  .Home-category-list a.post-title {
-    display: block;
-    margin-bottom: 1em;
-    color: #444;
-    text-decoration: none;
-  }
-  
-  .Home-category-list a.post-title:hover {
-    color: #d22;
-  }
-  
 
+// the widget renders the post title in a link with class .cat-post-title
+.Home-category-list a.cat-post-title {
+  display: block;
+  margin-bottom: 1em;
+  color: #444;
+  text-decoration: none;
+}
 
-@media ( min-width: 40em ) {
-  
+.Home-category-list a.cat-post-title:hover {
+  color: #d22;
+}
+
+@media (min-width: 40em) {
   .Home-categories {
-    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    
   }
-  
-  .Home-category-list {
-    width: 31%;    
-  }
-  
-}
 
+  .Home-category-list {
+    width: 31%;
+  }
+}
 
 //----------------------------------------------------------
 // Homepage cover image
@@ -157,24 +140,20 @@
   margin-bottom: 1em;
 }
 
-  .Wrap-home-cover a {
-    color: #eee;
-  }
-  
-  .Wrap-home-cover a:hover {
-    color: #d22;
-  }
+.Wrap-home-cover a {
+  color: #eee;
+}
+
+.Wrap-home-cover a:hover {
+  color: #d22;
+}
 
 .Home-cover-hed {
   margin-top: 0.5em;
 }
 
-@media ( min-width: 40em ) {
-  
+@media (min-width: 40em) {
   .Wrap-home-cover {
     width: 31%;
   }
-  
 }
-
-
