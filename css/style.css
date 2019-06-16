@@ -928,13 +928,13 @@ input.otherAmountError {
   padding: 0;
   list-style: none; }
 
-.Home-category-list a.post-title {
+.Home-category-list a.cat-post-title {
   display: block;
   margin-bottom: 1em;
   color: #444;
   text-decoration: none; }
 
-.Home-category-list a.post-title:hover {
+.Home-category-list a.cat-post-title:hover {
   color: #d22; }
 
 .Wrap-home-cover {
