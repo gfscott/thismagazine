@@ -2,7 +2,6 @@
   background: #ddd;
 }
 
-
 .Skybar {
   margin: 0 auto;
   max-width: 60em;
@@ -13,20 +12,16 @@
   padding: 0 1em;
   list-style: none;
   font-size: 0.8em;
-  
+
   display: flex;
   justify-content: flex-end;
-  
 }
 
-@media ( min-width: 40em ) {
-  
+@media (min-width: 40em) {
   .Skybar-list {
     font-size: 1em;
   }
-  
 }
-
 
 .Skybar-list li {
   display: inline-block;
@@ -38,11 +33,10 @@
   text-decoration: none;
   color: #444;
 }
-  
-  .Skybar-list a:hover {
-    color: #d22;
-  }
 
+.Skybar-list a:hover {
+  color: #d22;
+}
 
 .Skybar-link--twitter a:hover {
   background-color: #55acee;
@@ -66,7 +60,7 @@
 }
 
 .Skybar-link--donate a {
-  background-color: #1E90FF;
+  background-color: #1e90ff;
 }
 
 .Skybar-link--subscribe a:hover {
@@ -74,5 +68,10 @@
 }
 
 .Skybar-link--donate a:hover {
-  background-color: #4169E1;
+  background-color: #4169e1;
+}
+
+// positioning social media buttons
+.Skybar-link--push {
+  margin-right: auto;
 }

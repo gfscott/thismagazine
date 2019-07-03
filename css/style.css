@@ -1284,13 +1284,16 @@ input.otherAmountError {
   background-color: #d22; }
 
 .Skybar-link--donate a {
-  background-color: #1E90FF; }
+  background-color: #1e90ff; }
 
 .Skybar-link--subscribe a:hover {
   background-color: #a22; }
 
 .Skybar-link--donate a:hover {
-  background-color: #4169E1; }
+  background-color: #4169e1; }
+
+.Skybar-link--push {
+  margin-right: auto; }
 
 .Wrap-subscribe .Subscribe-step {
   margin: 1em 0; }
