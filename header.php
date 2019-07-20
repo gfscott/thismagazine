@@ -7,7 +7,7 @@
 
     <title><?php bloginfo("name"); wp_title(" → ", true, "left"); ?></title>
 
-    <link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/style-23270c5a55.min.css">
+    <link rel="stylesheet" href="<?php bloginfo("template_url"); ?>/css/style-430f639d1b.min.css">
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
