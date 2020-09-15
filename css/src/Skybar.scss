@@ -79,8 +79,10 @@
 
 .Skybar-link--subscribe a,
 .Skybar-link--donate a,
+.Skybar-link--talkseries a,
 .Skybar-link--subscribe a:hover,
-.Skybar-link--donate a:hover {
+.Skybar-link--donate a:hover,
+.Skybar-link--talkseries a:hover {
   color: #fff;
 }
 
@@ -103,4 +105,12 @@
 // positioning social media buttons
 .Skybar-link--push {
   margin-right: auto;
+}
+
+.Skybar-link--talkseries a {
+  background-color: forestgreen;
+}
+
+.Skybar-link--talkseries a:hover {
+  background-color: darkgreen;
 }
