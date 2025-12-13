@@ -124,14 +124,15 @@ remove_action ('wp_head', 'rsd_link');
 remove_action( 'wp_head', 'wlwmanifest_link');
 
 // completely disable wp-json access
+// Many plugins require this now
 // https://gist.github.com/timwhitlock/ef62645c41ca61718fb2be7adcb641c6
-add_filter( 'rest_authentication_errors', function( $access ){
-    return new WP_Error( 'rest_cannot_access', 'Bye', array( 'status' => 403 ) );
-} );
-// also remove actions added by wp-includes/default-filters.php
-remove_action( 'wp_head', 'rest_output_link_wp_head' );
-remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-remove_action( 'template_redirect', 'rest_output_link_header' );
+// add_filter( 'rest_authentication_errors', function( $access ){
+//     return new WP_Error( 'rest_cannot_access', 'Bye', array( 'status' => 403 ) );
+// } );
+// // also remove actions added by wp-includes/default-filters.php
+// remove_action( 'wp_head', 'rest_output_link_wp_head' );
+// remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+// remove_action( 'template_redirect', 'rest_output_link_header' );
 
 // Dequeue yarpp Widgets CSS Style Sheet
 // https://crunchify.com/deregister-yarpp-contact-form-7-css-wordpress-optimization/
